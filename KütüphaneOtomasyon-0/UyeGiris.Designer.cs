@@ -35,7 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.MaskedTextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtKullanıcıAdı
@@ -44,6 +44,7 @@
             this.txtKullanıcıAdı.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtKullanıcıAdı.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtKullanıcıAdı.Location = new System.Drawing.Point(184, 83);
+            this.txtKullanıcıAdı.MaxLength = 11;
             this.txtKullanıcıAdı.Name = "txtKullanıcıAdı";
             this.txtKullanıcıAdı.Size = new System.Drawing.Size(144, 27);
             this.txtKullanıcıAdı.TabIndex = 0;
@@ -92,7 +93,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
             this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(172, 200);
+            this.button2.Location = new System.Drawing.Point(174, 215);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 30);
             this.button2.TabIndex = 18;
@@ -105,7 +106,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(252, 200);
+            this.button1.Location = new System.Drawing.Point(254, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 30);
             this.button1.TabIndex = 2;
@@ -115,13 +116,16 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.AccessibleDescription = "";
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(106)))), ((int)(((byte)(111)))));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtPassword.Location = new System.Drawing.Point(184, 128);
-            this.txtPassword.Mask = "00000000";
+            this.txtPassword.MaxLength = 11;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(144, 27);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
             // UyeGiris
             // 
@@ -129,7 +133,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(682, 403);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.ControlBox = false;
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -138,6 +142,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(700, 450);
             this.MinimumSize = new System.Drawing.Size(700, 450);
@@ -158,6 +163,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private MaskedTextBox txtPassword;
+        private TextBox txtPassword;
     }
 }

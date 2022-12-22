@@ -42,33 +42,36 @@ namespace KütüphaneOtomasyon_0
         private void button1_Click(object sender, EventArgs e)
 
         {
-            bool blnfound = false;
+            /*  bool blnfound = false;
 
-            baglanti.Open();
-            NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
-            NpgsqlDataReader dr = komut1.ExecuteReader();
-            if (dr.Read())
-            {
-                blnfound = true;
+              baglanti.Open();
+              NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
+              NpgsqlDataReader dr = komut1.ExecuteReader();
+              if (dr.Read())
+              {
+                  blnfound = true;
 
-                YoneticiAnasayfa form6 = new YoneticiAnasayfa();
-                form6.Show();
-                this.Hide();
+                  YoneticiAnasayfa form6 = new YoneticiAnasayfa();
+                  form6.Show();
+                  this.Hide();
 
-                MessageBox.Show("Hoş Geldiniz. !!");
+                  MessageBox.Show("Hoş Geldiniz. !!");
 
-            }
+              }
 
-            if (blnfound == false)
-            {
-                MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            dr.Close();
-            baglanti.Close();
+              if (blnfound == false)
+              {
+                  MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+              }
+              dr.Close();
+              baglanti.Close();
+
+              */
+            YoneticiAnasayfa form6 = new YoneticiAnasayfa();
+            form6.ShowDialog();
+            this.Hide();
 
 
-
-            
         }
 
         private void YoneticiGiris_Load(object sender, EventArgs e)

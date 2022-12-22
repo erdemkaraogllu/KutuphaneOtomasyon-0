@@ -22,26 +22,9 @@ namespace KütüphaneOtomasyon_0
             InitializeComponent();
         }
         NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
-
-        /*public bool Login(string kullanıcıAdi, string sifre)
-        {
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select userName, Password from userr where UserName='" + kullanıcıAdi + "' and Password='" + sifre + "'", baglanti);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count <= 0)
-            {
-                MessageBox.Show("Bilgileriniz yanlış veya böyle bir hesap mevcut değil !", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else if (dt.Rows[0][1].ToString() == "1")
-            {
-                MessageBox.Show("Giriş Yapıldı !", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
-            }
-            
-
-            
-        } */
+        public static string deger = "";
+        public static string ad = "";
+        public static string soyad = "";
             private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -85,57 +68,47 @@ namespace KütüphaneOtomasyon_0
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            /* if (Login(txtKullanıcıAdı.Text, txtPassword.Text))
-             {
-                 MessageBox.Show("Hoşgeldiniz");
-                 UyeAnasayfa form5 = new UyeAnasayfa();
-                 form5.Show();
-                 this.Hide();
-             }
-             else
-             {
-                 this.Controls.Clear();
-             } */
-
-            bool blnfound = false;
-
             
-            baglanti.Open();
-            NpgsqlCommand komut1 = new NpgsqlCommand("Select * from uyebilgi where tc = '" + txtKullanıcıAdı.Text + "' and uye_sifre = '" + txtPassword.Text + "'", baglanti);
-            //NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
-            NpgsqlDataReader dr = komut1.ExecuteReader();
-            if (dr.Read())
-            {
-                blnfound = true;
+             bool blnfound = false;
 
-                UyeAnasayfa form5 = new UyeAnasayfa();
-                form5.Show();
+             baglanti.Open();
+             NpgsqlCommand komut1 = new NpgsqlCommand("Select * from uyebilgi where tc = '" + txtKullanıcıAdı.Text + "' and uye_sifre = '" + txtPassword.Text + "'", baglanti);
+             NpgsqlDataReader dr = komut1.ExecuteReader();
+             if (dr.Read())
+             {
+                 deger = txtKullanıcıAdı.Text;
+                 blnfound = true;
+                 
+                baglanti.Close();
+                 
+
+                baglanti.Open();
+                NpgsqlCommand komut2 = new NpgsqlCommand("SELECT uye_ad, uye_soyad FROM uyebilgi WHERE tc = '" + txtKullanıcıAdı.Text + "'",baglanti);
+                NpgsqlDataReader dr2 = komut2.ExecuteReader();
+                if (dr2.Read())
+                {
+                  ad = dr2["uye_ad"].ToString();
+                  soyad = dr2["uye_soyad"].ToString();
+                    dr2.Close();
+
+                }
+                UyeAnasayfa form = new UyeAnasayfa();
+                form.Show();
                 this.Hide();
-
                 MessageBox.Show("Hoş Geldiniz. !!");
 
-                
             }
 
-            if (blnfound == false)
-            {
-                MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            dr.Close();
-            baglanti.Close();
+             if (blnfound == false)
+             {
+                 MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+             }
+             dr.Close();
+             baglanti.Close(); 
 
-
-
-
-
-
-
-
-
-
-
-
+            UyeAnasayfa form5 = new UyeAnasayfa();
+            form5.Show();
+            this.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -156,6 +129,11 @@ namespace KütüphaneOtomasyon_0
         private void Form2_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void textPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

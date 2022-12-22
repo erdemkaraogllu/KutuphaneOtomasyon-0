@@ -7,19 +7,9 @@ namespace KütüphaneOtomasyon_0
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UyeGiris form2 = new UyeGiris();
-            form2.Show();
-            this.Hide();
-        }
+        
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            YoneticiGiris form3 = new YoneticiGiris();
-            form3.Show();
-            this.Hide();
-        }
+        
 
         private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
         {
@@ -39,6 +29,25 @@ namespace KütüphaneOtomasyon_0
         private void Form1_Load_1(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            YoneticiGiris form3 = new YoneticiGiris();
+            form3.Show();
+            this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            UyeGiris form2 = new UyeGiris();
+            form2.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

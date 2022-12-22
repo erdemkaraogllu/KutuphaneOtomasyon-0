@@ -33,11 +33,32 @@ namespace KütüphaneOtomasyon_0
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                baglanti.Open();
+                string sorgu = "SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%'";
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "kutuphane");
+                dgvData.DataSource = ds.Tables["kutuphane"];
+                baglanti.Close();
+                               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arama Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
         }
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            string deger1 = UyeGiris.deger;
+            string degerAd = UyeGiris.ad;
+            string degerSoyad = UyeGiris.soyad;
+
+            label1.Text = degerAd + " " + degerSoyad;
+            dgvDataOdunc.DataSource = yenileEmanet();
+            dgvData.DataSource = yenileKitap();
             
         }
 
@@ -45,14 +66,16 @@ namespace KütüphaneOtomasyon_0
         {
             try
             {
-                string sorgu = "select * from kitap";
+                txtAra.Clear();
+                string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                dgvData.DataSource = ds.Tables[0];   
+                dgvData.DataSource = ds.Tables[0];
+                
 
             }
-            catch(Exception ex) 
+            catch (Exception ex) 
             {
 
                 MessageBox.Show("Listeleme Hatası"+ ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
@@ -63,8 +86,77 @@ namespace KütüphaneOtomasyon_0
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UyeGuncelleme form1 = new UyeGuncelleme();
-            form1.Show();
-            this.Hide();
+            form1.ShowDialog();
+            
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                //for (int i = 0; i < dgvData.SelectedRows.Count; i++)
+                //{
+                   baglanti.Open();
+               string TC = UyeGiris.deger;
+               string KitapAd = dgvData.CurrentRow.Cells[0].Value.ToString();
+
+                
+
+                    NpgsqlCommand komut = new NpgsqlCommand("SELECT FROM emanet_al(:_tc, :_kitap_ad)", baglanti);
+                    komut.Parameters.AddWithValue("_tc", TC);
+                    komut.Parameters.AddWithValue("_kitap_ad",KitapAd);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+
+                    MessageBox.Show("Kitap Emanet Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvData.DataSource = yenileKitap();
+                    dgvDataOdunc.DataSource = yenileEmanet(); 
+
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Emanet Alma Hatası !", "HATA " +  ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
+        }
+
+        DataTable yenileKitap()
+        {
+            baglanti.Open();
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap", baglanti);
+            DataTable tablo = new DataTable();
+            da.Fill(tablo);
+            baglanti.Close();
+            return tablo;
+        }
+        DataTable yenileEmanet()
+        {
+            baglanti.Open();
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad FROM emanet_kitap", baglanti);
+            DataTable tablo1 = new DataTable();
+            da.Fill(tablo1);
+            baglanti.Close();
+            return tablo1;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            string deger1 = UyeGiris.deger;
+            label3.Text = deger1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = dgvData.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btnTeslimEt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

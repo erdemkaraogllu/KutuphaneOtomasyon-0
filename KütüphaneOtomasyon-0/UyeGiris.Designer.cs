@@ -33,9 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.linkUyeOl = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtKullanıcıAdı
@@ -49,16 +50,17 @@
             this.txtKullanıcıAdı.Size = new System.Drawing.Size(144, 27);
             this.txtKullanıcıAdı.TabIndex = 0;
             this.txtKullanıcıAdı.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtKullanıcıAdı.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKullanıcıAdı_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(120, 133);
+            this.label2.Location = new System.Drawing.Point(126, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 18);
+            this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "ŞİFRE :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -67,20 +69,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(52, 88);
+            this.label1.Location = new System.Drawing.Point(129, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 18);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 14;
-            this.label1.Text = "KULLANICI ADI :";
+            this.label1.Text = "( TC ) :";
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
             this.button3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(26, 344);
+            this.button3.Location = new System.Drawing.Point(22, 392);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 30);
             this.button3.TabIndex = 19;
@@ -88,25 +90,12 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(174, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 30);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "ÜYE OL";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(254, 215);
+            this.button1.Location = new System.Drawing.Point(221, 166);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 30);
             this.button1.TabIndex = 2;
@@ -127,6 +116,36 @@
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
+            // linkUyeOl
+            // 
+            this.linkUyeOl.AutoSize = true;
+            this.linkUyeOl.BackColor = System.Drawing.Color.Transparent;
+            this.linkUyeOl.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkUyeOl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.linkUyeOl.LinkColor = System.Drawing.Color.White;
+            this.linkUyeOl.Location = new System.Drawing.Point(269, 209);
+            this.linkUyeOl.Name = "linkUyeOl";
+            this.linkUyeOl.Size = new System.Drawing.Size(70, 21);
+            this.linkUyeOl.TabIndex = 20;
+            this.linkUyeOl.TabStop = true;
+            this.linkUyeOl.Text = "ÜYE OL";
+            this.linkUyeOl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkUyeOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkUyeOl_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(55, 213);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(142, 17);
+            this.linkLabel1.TabIndex = 21;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "ŞİFREMİ UNUTTUM";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // UyeGiris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -135,11 +154,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(700, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkUyeOl);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtKullanıcıAdı);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -161,8 +181,9 @@
         private Label label2;
         private Label label1;
         private Button button3;
-        private Button button2;
         private Button button1;
         private TextBox txtPassword;
+        private LinkLabel linkUyeOl;
+        private LinkLabel linkLabel1;
     }
 }

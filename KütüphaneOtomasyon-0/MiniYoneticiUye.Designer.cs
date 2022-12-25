@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniYoneticiUye));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniYoneticiUye));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvUye = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,12 @@
             this.txtAra = new System.Windows.Forms.TextBox();
             this.pbOduncVer = new System.Windows.Forms.PictureBox();
             this.pbAra = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtEmanetAra = new System.Windows.Forms.TextBox();
+            this.pbEmanetAra = new System.Windows.Forms.PictureBox();
+            this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUye)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,19 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKayıtSil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOduncVer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmanetAra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(836, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -88,11 +83,11 @@
             this.dgvUye.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUye.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUye.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -154,15 +149,28 @@
             this.groupBox2.Size = new System.Drawing.Size(750, 200);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ÖDÜNÇ KİTAP İŞLEMLERİ";
+            this.groupBox2.Text = "EMANET KİTAP İŞLEMLERİ";
             // 
             // dgvKitap
             // 
             this.dgvKitap.AllowUserToAddRows = false;
             this.dgvKitap.AllowUserToDeleteRows = false;
+            this.dgvKitap.AllowUserToOrderColumns = true;
             this.dgvKitap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKitap.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKitap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKitap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKitap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.dgvKitap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvKitap.Location = new System.Drawing.Point(3, 26);
             this.dgvKitap.MultiSelect = false;
@@ -180,7 +188,7 @@
             this.pbKayıtSil.Image = ((System.Drawing.Image)(resources.GetObject("pbKayıtSil.Image")));
             this.pbKayıtSil.Location = new System.Drawing.Point(414, 299);
             this.pbKayıtSil.Name = "pbKayıtSil";
-            this.pbKayıtSil.Size = new System.Drawing.Size(63, 62);
+            this.pbKayıtSil.Size = new System.Drawing.Size(70, 62);
             this.pbKayıtSil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbKayıtSil.TabIndex = 3;
             this.pbKayıtSil.TabStop = false;
@@ -195,12 +203,14 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(273, 30);
             this.txtAra.TabIndex = 4;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            this.txtAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAra_KeyPress);
             // 
             // pbOduncVer
             // 
             this.pbOduncVer.BackColor = System.Drawing.Color.Transparent;
             this.pbOduncVer.Image = ((System.Drawing.Image)(resources.GetObject("pbOduncVer.Image")));
-            this.pbOduncVer.Location = new System.Drawing.Point(414, 579);
+            this.pbOduncVer.Location = new System.Drawing.Point(414, 609);
             this.pbOduncVer.Name = "pbOduncVer";
             this.pbOduncVer.Size = new System.Drawing.Size(70, 62);
             this.pbOduncVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -224,27 +234,89 @@
             this.pbAra.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
             this.pbAra.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
+            // txtEmanetAra
+            // 
+            this.txtEmanetAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtEmanetAra.Location = new System.Drawing.Point(295, 573);
+            this.txtEmanetAra.Name = "txtEmanetAra";
+            this.txtEmanetAra.Size = new System.Drawing.Size(273, 30);
+            this.txtEmanetAra.TabIndex = 7;
+            this.txtEmanetAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmanetAra_KeyPress);
+            // 
+            // pbEmanetAra
+            // 
+            this.pbEmanetAra.BackColor = System.Drawing.Color.Transparent;
+            this.pbEmanetAra.Image = ((System.Drawing.Image)(resources.GetObject("pbEmanetAra.Image")));
+            this.pbEmanetAra.Location = new System.Drawing.Point(574, 573);
+            this.pbEmanetAra.Name = "pbEmanetAra";
+            this.pbEmanetAra.Size = new System.Drawing.Size(32, 30);
+            this.pbEmanetAra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEmanetAra.TabIndex = 8;
+            this.pbEmanetAra.TabStop = false;
+            this.pbEmanetAra.Click += new System.EventHandler(this.pbEmanetAra_Click);
+            this.pbEmanetAra.MouseEnter += new System.EventHandler(this.pbEmanetAra_MouseEnter);
+            this.pbEmanetAra.MouseLeave += new System.EventHandler(this.pbEmanetAra_MouseLeave);
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(836, 12);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 9;
+            this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
+            this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter);
+            this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave);
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "id";
+            this.Column5.HeaderText = "ID";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "tc";
+            this.Column6.HeaderText = "TC";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "kitap_ad";
+            this.Column7.HeaderText = "KİTAP ADI";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
             // MiniYoneticiUye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(882, 653);
+            this.ClientSize = new System.Drawing.Size(882, 700);
+            this.Controls.Add(this.circularPictureBox1);
+            this.Controls.Add(this.pbEmanetAra);
+            this.Controls.Add(this.txtEmanetAra);
             this.Controls.Add(this.pbAra);
             this.Controls.Add(this.pbOduncVer);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.pbKayıtSil);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MiniYoneticiUye";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniYoneticiUye";
             this.Load += new System.EventHandler(this.MiniYoneticiUye_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUye)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -252,14 +324,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbKayıtSil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOduncVer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmanetAra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private GroupBox groupBox1;
         private DataGridView dgvUye;
         private GroupBox groupBox2;
@@ -272,5 +344,11 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private TextBox txtEmanetAra;
+        private PictureBox pbEmanetAra;
+        private CircularPictureBox circularPictureBox1;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
     }
 }

@@ -18,11 +18,6 @@ namespace KütüphaneOtomasyon_0
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Close();
-        }
-
         NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
         private void MiniYoneticiAnasayfa_Load(object sender, EventArgs e)
         {
@@ -38,6 +33,27 @@ namespace KütüphaneOtomasyon_0
             baglanti.Close(); 
             lblKullanıcıSayisi.Text= kitap;
 
+            NpgsqlCommand emanetkitapsayisi = new NpgsqlCommand("SELECT count(tc) FROM emanet_kitap", baglanti);
+            baglanti.Open();
+            string emanet = emanetkitapsayisi.ExecuteScalar().ToString();
+            baglanti.Close();
+            lblEmanetKitapSayisi.Text = emanet;
+
+        }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
+
+        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Red;
+        }
+
+        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Transparent;
         }
     }
 }

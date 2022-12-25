@@ -20,15 +20,14 @@ namespace KütüphaneOtomasyon_0
         public UyeAnasayfa()
         {
             InitializeComponent();
+            this.IsMdiContainer = true;
         }
-        NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
+            NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
         
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Anasayfa form1 = new Anasayfa();
-            form1.Show();
-            this.Hide();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,8 +40,7 @@ namespace KütüphaneOtomasyon_0
                 DataSet ds = new DataSet();
                 da.Fill(ds, "kutuphane");
                 dgvData.DataSource = ds.Tables["kutuphane"];
-                baglanti.Close();
-                               
+                baglanti.Close();                             
             }
             catch (Exception ex)
             {
@@ -71,15 +69,11 @@ namespace KütüphaneOtomasyon_0
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                dgvData.DataSource = ds.Tables[0];
-                
-
+                dgvData.DataSource = ds.Tables[0];               
             }
             catch (Exception ex) 
             {
-
-                MessageBox.Show("Listeleme Hatası"+ ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-                
+                MessageBox.Show("Listeleme Hatası"+ ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);               
             }
         }
 
@@ -95,25 +89,41 @@ namespace KütüphaneOtomasyon_0
             
             try
             {
-                //for (int i = 0; i < dgvData.SelectedRows.Count; i++)
-                //{
-                   baglanti.Open();
-               string TC = UyeGiris.deger;
-               string KitapAd = dgvData.CurrentRow.Cells[0].Value.ToString();
+                string deger1 = UyeGiris.deger;
+                bool sorgu = false;
+                baglanti.Open();                               
+                NpgsqlCommand komut1 = new NpgsqlCommand("SELECT * FROM emanet_kitap WHERE tc = '" + deger1 +"'", baglanti);
+                NpgsqlDataReader dr = komut1.ExecuteReader();
+                              
+                if (dr.Read())               
+                {
+                    sorgu = true;
+                    MessageBox.Show("Önce Emanet Kitabı Teslim Ediniz","HATA",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                }
+                dr.Close();
+                baglanti.Close();
 
-                
+                if (sorgu == false)
+                {
+                    dr.Close();
+                    baglanti.Close();
+                    baglanti.Open();
+                    string TC = UyeGiris.deger;
+                    string KitapAd = dgvData.CurrentRow.Cells[0].Value.ToString();
+
 
                     NpgsqlCommand komut = new NpgsqlCommand("SELECT FROM emanet_al(:_tc, :_kitap_ad)", baglanti);
                     komut.Parameters.AddWithValue("_tc", TC);
-                    komut.Parameters.AddWithValue("_kitap_ad",KitapAd);
+                    komut.Parameters.AddWithValue("_kitap_ad", KitapAd);
                     komut.ExecuteNonQuery();
                     baglanti.Close();
 
                     MessageBox.Show("Kitap Emanet Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     dgvData.DataSource = yenileKitap();
-                    dgvDataOdunc.DataSource = yenileEmanet(); 
-
+                    dgvDataOdunc.DataSource = yenileEmanet();
+                }
                 
             }
             catch(Exception ex)
@@ -133,30 +143,51 @@ namespace KütüphaneOtomasyon_0
         }
         DataTable yenileEmanet()
         {
+            string deger1 = UyeGiris.deger;
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad FROM emanet_kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad FROM emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
             DataTable tablo1 = new DataTable();
             da.Fill(tablo1);
             baglanti.Close();
             return tablo1;
-        }
+        }       
 
-        private void label3_Click(object sender, EventArgs e)
+        private void pbOkunanKitaplar_MouseEnter(object sender, EventArgs e)
         {
-            string deger1 = UyeGiris.deger;
-            label3.Text = deger1;
+            pbOkunanKitaplar.BackColor = Color.Red;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pbOkunanKitaplar_MouseLeave(object sender, EventArgs e)
         {
-            textBox1.Text = dgvData.CurrentRow.Cells[0].Value.ToString();
+            pbOkunanKitaplar.BackColor = Color.FromArgb(153, 217, 234);
         }
 
-        private void btnTeslimEt_Click(object sender, EventArgs e)
+        private void pbOkunanKitaplar_Click(object sender, EventArgs e)
         {
-
+            var form1 = new OkunanKitap
+            {
+                ShowInTaskbar = false,
+                MinimizeBox = false,
+                MaximizeBox = false
+            };
+            form1.ShowDialog(this);
         }
 
-        
+        private void circularPictureBox3_Click(object sender, EventArgs e)
+        {
+            Anasayfa form1 = new Anasayfa();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void circularPictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor = Color.Red;
+        }
+
+        private void circularPictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor = Color.Transparent;
+        }
     }
 }

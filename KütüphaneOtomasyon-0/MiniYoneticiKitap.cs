@@ -19,10 +19,6 @@ namespace KütüphaneOtomasyon_0
         }
         NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Close();
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -31,7 +27,7 @@ namespace KütüphaneOtomasyon_0
             {
                 
                 
-                if (txtKitapAd.TextLength == 0 || txtYazarAd.TextLength == 0 || txtTür.TextLength == 0 || txtYayınEvi.TextLength == 0 || txtBasim.TextLength == 0 || txtSayfa.TextLength == 0)
+                if (txtKitapAd.TextLength == 0 || txtYazarAd.TextLength == 0 || cbKitapTur.TabIndex == 0 || txtYayınEvi.TextLength == 0 || txtBasim.TextLength == 0 || txtSayfa.TextLength == 0)
                 {
                     MessageBox.Show("Boş Alan Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -51,12 +47,13 @@ namespace KütüphaneOtomasyon_0
                     }         
                     else
                     {
+                        
                         baglanti.Close();
                         baglanti.Open();
                         NpgsqlCommand kaydet = new NpgsqlCommand("SELECT FROM kitap_insert(:_kitap_ad, :_yazar, :_tur, :_yayin_evi, :_basim, :_sayfa)", baglanti);
                         kaydet.Parameters.AddWithValue("_kitap_ad", txtKitapAd.Text.ToUpper());
                         kaydet.Parameters.AddWithValue("_yazar", txtYazarAd.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_tur", txtTür.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_tur", cbKitapTur.SelectedItem.ToString().ToUpper());
                         kaydet.Parameters.AddWithValue("_yayin_evi", txtYayınEvi.Text.ToUpper());
                         kaydet.Parameters.AddWithValue("_basim", txtBasim.Text.ToUpper());
                         kaydet.Parameters.AddWithValue("_sayfa", txtSayfa.Text.ToUpper());
@@ -69,7 +66,7 @@ namespace KütüphaneOtomasyon_0
                         {
                             if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
                         }
-                        //MiniYoneticiAnasayfa_load(sender , ActiveForm);
+                        
                     }
                     dr.Close();
                 }            
@@ -95,20 +92,11 @@ namespace KütüphaneOtomasyon_0
         {
             try
             {
-                dgwTablo.DataSource = null;
-                string sorgu = "select * from kitap";
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                dgwTablo.DataSource = ds.Tables[0];
-
-
+                dgwTablo.DataSource = yenile();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Listeleme Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-
             }
         }
 
@@ -130,18 +118,39 @@ namespace KütüphaneOtomasyon_0
                 MessageBox.Show("Kitap Silindi !", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 delete.Dispose();
                 GC.Collect();
-
+                dgwTablo.DataSource = yenile();
             }
         }
 
         DataTable yenile()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT FROM kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT id,kitap_ad,yazar,tur,yayin_evi,basim,sayfa FROM kitap", baglanti);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             baglanti.Close();
             return tablo;
+        }
+
+        private void txtSayfa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//sadece rakam
+
+        }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
+
+        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Red;
+        }
+
+        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Transparent;
         }
     }
 }

@@ -18,53 +18,68 @@ namespace KütüphaneOtomasyon_0
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
+            NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (txtTC.TextLength == 0 || txtAd.TextLength == 00 || txtSoyad.TextLength == 0 || txtTelefon.TextLength ==0 || txtSifre.TextLength ==0) 
+                if (txtTC.TextLength == 0 || txtAd.TextLength == 00 || txtSoyad.TextLength == 0 || txtTelefon.TextLength == 0 || txtSifre.TextLength == 0)
                 {
                     MessageBox.Show("Boş Alan Bırakmayınız !");
                 }
-                else {
+                else
+                {
+                    bool sorgu = false;
                     baglanti.Open();
-                    NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
-                    komut1.Parameters.AddWithValue("_tc", txtTC.Text);
-                    komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text);
-                    komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text);
-                    komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
-                    komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
-                    komut1.ExecuteNonQuery();
-                    baglanti.Close();
+                    NpgsqlCommand komut0 = new NpgsqlCommand("SELECT FROM uyebilgi WHERE tc = '" + txtTC.Text + "'", baglanti);
+                    NpgsqlDataReader dr = komut0.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        sorgu = true;
+                        MessageBox.Show("Sistemde Zaten Kayıtlısınız !", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        baglanti.Close();
+                        dr.Close();
+                    }
 
-                    MessageBox.Show("Kayıt Başarılı.");
+                    if (sorgu == false)
+                    {
+                        if (txtSifre.TextLength <= 4)
+                        {
+                            MessageBox.Show("En Az 4 Karakterli Bir Şifre Ekleyiniz !");
+                        }
+                        baglanti.Open();
+                        NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
+                        komut1.Parameters.AddWithValue("_tc", txtTC.Text);
+                        komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text);
+                        komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text);
+                        komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
+                        komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
+                        komut1.ExecuteNonQuery();
+                        baglanti.Close();
 
-                    UyeGiris form2 = new UyeGiris();
-                    form2.Show();
-                    this.Hide();
+                        MessageBox.Show("Kayıt Başarılı.");
+
+                        UyeGiris form2 = new UyeGiris();
+                        form2.Show();
+                        this.Hide();
+                    }
                 }
             }
             catch(Exception ex)
             {
                 baglanti.Close();
                 MessageBox.Show("Kayıt Hatası ! " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-
             }
 
         }
-
-       
-
+        
         private void Form4_Load(object sender, EventArgs e)
         {
             
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            
+        {           
             if (checkBox1.CheckState == CheckState.Checked)
             {
                 txtSifre.UseSystemPasswordChar = true;
@@ -72,11 +87,8 @@ namespace KütüphaneOtomasyon_0
             else if (checkBox1.CheckState == CheckState.Unchecked)
             {
                 txtSifre.UseSystemPasswordChar = false;
-            }
-
-        
+            }        
         }
-
         private void txtTc_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//sadece rakam
@@ -87,6 +99,11 @@ namespace KütüphaneOtomasyon_0
             UyeGiris form2 = new UyeGiris();
             form2.Show();
             this.Hide();
+        }
+
+        private void txtTC_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

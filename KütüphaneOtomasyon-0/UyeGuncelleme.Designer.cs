@@ -113,6 +113,7 @@
             this.txtTC.Name = "txtTC";
             this.txtTC.Size = new System.Drawing.Size(171, 27);
             this.txtTC.TabIndex = 0;
+            this.txtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTC_KeyPress);
             // 
             // txtAd
             // 

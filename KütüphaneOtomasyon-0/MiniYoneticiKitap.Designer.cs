@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniYoneticiKitap));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSayfa = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbKitapTur = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtBasim = new System.Windows.Forms.MaskedTextBox();
             this.txtYayınEvi = new System.Windows.Forms.TextBox();
-            this.txtTür = new System.Windows.Forms.TextBox();
             this.txtYazarAd = new System.Windows.Forms.TextBox();
             this.txtKitapAd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,34 +58,22 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TÜR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTablo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(836, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtSayfa);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbKitapTur);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.txtBasim);
             this.groupBox1.Controls.Add(this.txtYayınEvi);
-            this.groupBox1.Controls.Add(this.txtTür);
             this.groupBox1.Controls.Add(this.txtYazarAd);
             this.groupBox1.Controls.Add(this.txtKitapAd);
             this.groupBox1.Controls.Add(this.label6);
@@ -105,31 +93,100 @@
             // 
             // txtSayfa
             // 
+            this.txtSayfa.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSayfa.Location = new System.Drawing.Point(228, 250);
             this.txtSayfa.MaxLength = 4;
             this.txtSayfa.Name = "txtSayfa";
-            this.txtSayfa.Size = new System.Drawing.Size(125, 31);
+            this.txtSayfa.Size = new System.Drawing.Size(125, 27);
             this.txtSayfa.TabIndex = 5;
+            this.txtSayfa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSayfa_KeyPress);
             // 
-            // comboBox1
+            // cbKitapTur
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbKitapTur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKitapTur.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbKitapTur.FormattingEnabled = true;
+            this.cbKitapTur.Items.AddRange(new object[] {
+            "DÜNYA KLASİKLERİ",
+            "AŞK",
             "ROMAN",
-            "DİSTOPİK KURGU",
-            "TRAJEDİ"});
-            this.comboBox1.Location = new System.Drawing.Point(582, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 33);
-            this.comboBox1.TabIndex = 8;
+            "PSİKOLOJİ",
+            "GENÇLİK",
+            "DİN",
+            "TARİH",
+            "SİYASET-POLİTİKA",
+            "KİŞİSEL GELİŞİM",
+            "ÇOCUK",
+            "MACERA-AKSİYON",
+            "ŞİİR",
+            "POLİSİYE",
+            "FELSEFE-DÜŞÜNCE",
+            "FANTASTİK",
+            "KORKU-GERİLİM",
+            "EDEBİYAT",
+            "HİKAYE (ÖYKÜ)",
+            "BİLİM-KURGU",
+            "SOSYOLOJİ",
+            "BİYOGRAFİ",
+            "ARAŞTIRMA-İNCELEME",
+            "DENEME-İNCELEME",
+            "PARAPSİKOLOJİ-SPİRİTÜALİZM",
+            "EKONOMİ-EMEK-İŞ DÜNYASI",
+            "MANGA",
+            "EĞLENCE-MİZAH",
+            "TÜRK KLASİKLERİ",
+            "SAĞLIK-TIP",
+            "MASAL",
+            "İNSAN VE TOPLUM",
+            "ANI-MEKTUP-GÜNLÜK",
+            "BİLİM-TEKNOLOJİ-MÜHENDİSLİK",
+            "EĞİTİM",
+            "ÇİZGİ-ROMAN",
+            "TİYATRO",
+            "YERALTI EDEBİYATI",
+            "TASAVVUF-MEZHEPLER-TARİKATLAR",
+            "MİTOLOJİLER",
+            "HUKUK",
+            "ANTROPOLOJİ-ETNOLOJİ",
+            "SANAT",
+            "BİLGİSAYAR-İNTERNET",
+            "SPOR",
+            "GEZİ",
+            "KADIN-ERKEK",
+            "DERGİ",
+            "ANLATI",
+            "ELEŞTİRİ-KURAM",
+            "KADIN",
+            "AİLE (KADIN, ERKEK VE ÇOCUK)",
+            "EFSANELER-DESTANLAR",
+            "DİLBİLİMİ-ETİMOLOJİ",
+            "HOBİ",
+            "SİNEMA",
+            "YEMEK",
+            "ANTOLOJİ",
+            "DERS KİTAPLARI",
+            "SÖYLEŞİ-RÖPORTAJ",
+            "SENARYO-OYUN",
+            "MÜZİK",
+            "ÖZLÜ SÖZLER-DUVAR YAZILARI",
+            "HALK EDEBİYATI",
+            "İLETİŞİM-MEDYA",
+            "ASTROLOJİ-FAL-RÜYA TABİRLERİ",
+            "EKOLOJİ",
+            "SÖZLÜK-KILAVUZ KİTAP-ANSİKLOPEDİ",
+            "MODA",
+            "KÜLTÜR"});
+            this.cbKitapTur.Location = new System.Drawing.Point(228, 118);
+            this.cbKitapTur.Name = "cbKitapTur";
+            this.cbKitapTur.Size = new System.Drawing.Size(331, 28);
+            this.cbKitapTur.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(670, 209);
+            this.pictureBox2.Location = new System.Drawing.Point(662, 209);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(63, 69);
+            this.pictureBox2.Size = new System.Drawing.Size(84, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -139,43 +196,39 @@
             // 
             // txtBasim
             // 
+            this.txtBasim.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBasim.Location = new System.Drawing.Point(227, 206);
             this.txtBasim.Mask = "0000";
             this.txtBasim.Name = "txtBasim";
-            this.txtBasim.Size = new System.Drawing.Size(125, 31);
+            this.txtBasim.Size = new System.Drawing.Size(125, 27);
             this.txtBasim.TabIndex = 4;
             this.txtBasim.ValidatingType = typeof(int);
             // 
             // txtYayınEvi
             // 
-            this.txtYayınEvi.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtYayınEvi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtYayınEvi.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYayınEvi.Location = new System.Drawing.Point(228, 162);
             this.txtYayınEvi.Name = "txtYayınEvi";
-            this.txtYayınEvi.Size = new System.Drawing.Size(331, 31);
+            this.txtYayınEvi.Size = new System.Drawing.Size(331, 27);
             this.txtYayınEvi.TabIndex = 3;
-            // 
-            // txtTür
-            // 
-            this.txtTür.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTür.Location = new System.Drawing.Point(228, 118);
-            this.txtTür.Name = "txtTür";
-            this.txtTür.Size = new System.Drawing.Size(331, 31);
-            this.txtTür.TabIndex = 2;
             // 
             // txtYazarAd
             // 
-            this.txtYazarAd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtYazarAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtYazarAd.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYazarAd.Location = new System.Drawing.Point(228, 74);
             this.txtYazarAd.Name = "txtYazarAd";
-            this.txtYazarAd.Size = new System.Drawing.Size(331, 31);
+            this.txtYazarAd.Size = new System.Drawing.Size(331, 27);
             this.txtYazarAd.TabIndex = 1;
             // 
             // txtKitapAd
             // 
-            this.txtKitapAd.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtKitapAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtKitapAd.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtKitapAd.Location = new System.Drawing.Point(228, 30);
             this.txtKitapAd.Name = "txtKitapAd";
-            this.txtKitapAd.Size = new System.Drawing.Size(331, 31);
+            this.txtKitapAd.Size = new System.Drawing.Size(331, 27);
             this.txtKitapAd.TabIndex = 0;
             // 
             // label6
@@ -250,9 +303,19 @@
             this.dgwTablo.AllowUserToAddRows = false;
             this.dgwTablo.AllowUserToDeleteRows = false;
             this.dgwTablo.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dgwTablo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgwTablo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgwTablo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgwTablo.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgwTablo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgwTablo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTablo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
@@ -262,9 +325,7 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            this.dgwTablo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwTablo.Location = new System.Drawing.Point(3, 27);
-            this.dgwTablo.MultiSelect = false;
             this.dgwTablo.Name = "dgwTablo";
             this.dgwTablo.ReadOnly = true;
             this.dgwTablo.RowHeadersWidth = 51;
@@ -358,6 +419,20 @@
             this.TÜR.Name = "TÜR";
             this.TÜR.Width = 125;
             // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(836, 12);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 3;
+            this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
+            this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter);
+            this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave);
+            // 
             // MiniYoneticiKitap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -365,32 +440,29 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(882, 653);
+            this.Controls.Add(this.circularPictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MiniYoneticiKitap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MiniYoneticiKitap";
             this.Load += new System.EventHandler(this.MiniYoneticiKitap_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgwTablo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private MaskedTextBox txtBasim;
         private TextBox txtYayınEvi;
-        private TextBox txtTür;
         private TextBox txtYazarAd;
         private TextBox txtKitapAd;
         private Label label6;
@@ -400,7 +472,7 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbKitapTur;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -414,5 +486,6 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
+        private CircularPictureBox circularPictureBox1;
     }
 }

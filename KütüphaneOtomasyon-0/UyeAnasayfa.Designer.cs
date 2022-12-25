@@ -28,22 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UyeAnasayfa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UyeAnasayfa));
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.btnAra = new System.Windows.Forms.Button();
-            this.btnTeslimEt = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
             this.dgvDataOdunc = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,33 +47,24 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbOkunanKitaplar = new System.Windows.Forms.PictureBox();
+            this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.circularPictureBox3 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataOdunc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOkunanKitaplar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(59, 707);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 29);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "ÇIKIŞ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(217)))), ((int)(((byte)(234)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(106, 302);
+            this.btnUpdate.Location = new System.Drawing.Point(107, 310);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(132, 29);
             this.btnUpdate.TabIndex = 5;
@@ -88,28 +75,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(84, 234);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(87, 234);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 21);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 1;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(106, 94);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 128);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtAra
             // 
             this.txtAra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAra.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAra.Location = new System.Drawing.Point(442, 36);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(403, 27);
@@ -117,6 +94,7 @@
             // 
             // btnAra
             // 
+            this.btnAra.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAra.Location = new System.Drawing.Point(851, 36);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(99, 29);
@@ -125,25 +103,11 @@
             this.btnAra.UseVisualStyleBackColor = true;
             this.btnAra.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnTeslimEt
-            // 
-            this.btnTeslimEt.BackColor = System.Drawing.Color.Transparent;
-            this.btnTeslimEt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTeslimEt.BackgroundImage")));
-            this.btnTeslimEt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTeslimEt.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTeslimEt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTeslimEt.Location = new System.Drawing.Point(147, 579);
-            this.btnTeslimEt.Name = "btnTeslimEt";
-            this.btnTeslimEt.Size = new System.Drawing.Size(71, 62);
-            this.btnTeslimEt.TabIndex = 10;
-            this.btnTeslimEt.UseVisualStyleBackColor = false;
-            this.btnTeslimEt.Click += new System.EventHandler(this.btnTeslimEt_Click);
-            // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(707, 588);
+            this.button5.Location = new System.Drawing.Point(712, 573);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(106, 77);
             this.button5.TabIndex = 12;
@@ -153,6 +117,7 @@
             // 
             // btnListele
             // 
+            this.btnListele.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnListele.Location = new System.Drawing.Point(956, 36);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(99, 29);
@@ -174,7 +139,7 @@
             this.dgvDataOdunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataOdunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            this.dgvDataOdunc.Location = new System.Drawing.Point(59, 446);
+            this.dgvDataOdunc.Location = new System.Drawing.Point(59, 549);
             this.dgvDataOdunc.MultiSelect = false;
             this.dgvDataOdunc.Name = "dgvDataOdunc";
             this.dgvDataOdunc.ReadOnly = true;
@@ -191,16 +156,6 @@
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1090, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dgvData
             // 
@@ -284,43 +239,73 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // button1
+            // pbOkunanKitaplar
             // 
-            this.button1.Location = new System.Drawing.Point(521, 612);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pbOkunanKitaplar.BackColor = System.Drawing.Color.Transparent;
+            this.pbOkunanKitaplar.Image = ((System.Drawing.Image)(resources.GetObject("pbOkunanKitaplar.Image")));
+            this.pbOkunanKitaplar.Location = new System.Drawing.Point(130, 423);
+            this.pbOkunanKitaplar.Name = "pbOkunanKitaplar";
+            this.pbOkunanKitaplar.Size = new System.Drawing.Size(86, 83);
+            this.pbOkunanKitaplar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOkunanKitaplar.TabIndex = 20;
+            this.pbOkunanKitaplar.TabStop = false;
+            this.pbOkunanKitaplar.Click += new System.EventHandler(this.pbOkunanKitaplar_Click);
+            this.pbOkunanKitaplar.MouseEnter += new System.EventHandler(this.pbOkunanKitaplar_MouseEnter);
+            this.pbOkunanKitaplar.MouseLeave += new System.EventHandler(this.pbOkunanKitaplar_MouseLeave);
             // 
-            // textBox1
+            // circularPictureBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(380, 614);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 19;
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(107, 91);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 21;
+            this.circularPictureBox1.TabStop = false;
+            // 
+            // circularPictureBox3
+            // 
+            this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
+            this.circularPictureBox3.Location = new System.Drawing.Point(1128, 12);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox3.TabIndex = 23;
+            this.circularPictureBox3.TabStop = false;
+            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
+            this.circularPictureBox3.MouseEnter += new System.EventHandler(this.circularPictureBox3_MouseEnter);
+            this.circularPictureBox3.MouseLeave += new System.EventHandler(this.circularPictureBox3_MouseLeave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(501, 601);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
             // 
             // UyeAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 800);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.circularPictureBox3);
+            this.Controls.Add(this.circularPictureBox1);
+            this.Controls.Add(this.pbOkunanKitaplar);
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvDataOdunc);
             this.Controls.Add(this.btnListele);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.btnTeslimEt);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -330,27 +315,25 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ÜYE ANASAYFA";
             this.Load += new System.EventHandler(this.Form5_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataOdunc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOkunanKitaplar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Button button2;
         private Button btnUpdate;
         private Label label1;
-        private PictureBox pictureBox1;
         private TextBox txtAra;
         private Button btnAra;
-        private Button btnTeslimEt;
         private Button button5;
         private Button btnListele;
         private DataGridView dgvDataOdunc;
         private DataGridViewTextBoxColumn Column1;
-        private Label label3;
         private DataGridView dgvData;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -358,7 +341,9 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
-        private Button button1;
-        private TextBox textBox1;
+        private PictureBox pbOkunanKitaplar;
+        private CircularPictureBox circularPictureBox1;
+        private CircularPictureBox circularPictureBox3;
+        private Label label2;
     }
 }

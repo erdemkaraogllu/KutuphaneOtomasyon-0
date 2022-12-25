@@ -196,6 +196,7 @@
             this.txtTC.Name = "txtTC";
             this.txtTC.Size = new System.Drawing.Size(171, 27);
             this.txtTC.TabIndex = 0;
+            this.txtTC.TextChanged += new System.EventHandler(this.txtTC_TextChanged);
             this.txtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTc_KeyPress);
             // 
             // button1

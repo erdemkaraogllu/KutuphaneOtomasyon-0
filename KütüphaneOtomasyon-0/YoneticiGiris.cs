@@ -17,20 +17,7 @@ namespace KütüphaneOtomasyon_0
         {
             InitializeComponent();
         }
-        NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Anasayfa form1 = new Anasayfa();
-            form1.Show();
-            this.Hide();
-        }
+            NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
 
         private void button3_Click_1(object sender, EventArgs e)
         {
@@ -42,13 +29,14 @@ namespace KütüphaneOtomasyon_0
         private void button1_Click(object sender, EventArgs e)
 
         {
-            /*  bool blnfound = false;
+          bool blnfound = false;
 
-              baglanti.Open();
-              NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
-              NpgsqlDataReader dr = komut1.ExecuteReader();
-              if (dr.Read())
-              {
+            baglanti.Open();
+            NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
+            NpgsqlDataReader dr = komut1.ExecuteReader();
+
+            if (dr.Read())
+             {
                   blnfound = true;
 
                   YoneticiAnasayfa form6 = new YoneticiAnasayfa();
@@ -57,21 +45,18 @@ namespace KütüphaneOtomasyon_0
 
                   MessageBox.Show("Hoş Geldiniz. !!");
 
-              }
+             }
 
-              if (blnfound == false)
-              {
-                  MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-              }
-              dr.Close();
-              baglanti.Close();
-
-              */
-            YoneticiAnasayfa form6 = new YoneticiAnasayfa();
-            form6.ShowDialog();
-            this.Hide();
-
-
+            if (blnfound == false)
+             {
+                MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+             }
+        dr.Close();
+        baglanti.Close();
+              
+      /*  YoneticiAnasayfa form6 = new YoneticiAnasayfa();
+        form6.ShowDialog();
+        this.Hide(); */
         }
 
         private void YoneticiGiris_Load(object sender, EventArgs e)

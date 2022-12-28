@@ -52,7 +52,7 @@ namespace KütüphaneOtomasyon_0
         {   
             bool sorgu = false;
             baglanti.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '"+ txtTC.Text +"' and uye_telefon = '"+ txtTelefon +"'", baglanti);
+            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '"+ txtTC.Text +"' and uye_telefon = '"+ txtTelefon.Text +"'", baglanti);
             NpgsqlDataReader dr = komut.ExecuteReader();
             
 
@@ -62,25 +62,27 @@ namespace KütüphaneOtomasyon_0
                 dr.Close();
                 baglanti.Close();
             }
-            if (sorgu == true)
-            {                
-                baglanti.Open();
-                NpgsqlCommand komut1 = new NpgsqlCommand("SELECT * FROM UPDATE uyebilgi SET uye_sifre = '" + txtŞifre.Text + "' ", baglanti);
-                komut1.ExecuteNonQuery();
-                baglanti.Close();
+
+                if (sorgu == true)
+                {                
+                    baglanti.Open();
+                    NpgsqlCommand komut1 = new NpgsqlCommand("UPDATE uyebilgi SET uye_sifre = '" + txtŞifre.Text + "' WHERE tc = '" + txtTC.Text + "' ", baglanti);
+                    komut1.ExecuteNonQuery();
+                    baglanti.Close();
 
 
-                MessageBox.Show("Şifre Güncellendi! Yeni Şifreniz İle Giriş Yapabilirsiniz!", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if(sorgu == false)
-            {
-                MessageBox.Show("Bilgileriniz Yanlış!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                foreach (Control item in this.Controls)
-                {
-                    if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
+                    MessageBox.Show("Şifre Güncellendi! Yeni Şifreniz İle Giriş Yapabilirsiniz!", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActiveForm.Close();
                 }
-            }
+                else if(sorgu == false)
+                {
+                    MessageBox.Show("Bilgileriniz Yanlış!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    foreach (Control item in this.Controls)
+                    {
+                        if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
+                    }
+                }
             baglanti.Close();
         }
     }

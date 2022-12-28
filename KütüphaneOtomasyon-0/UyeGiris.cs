@@ -77,7 +77,7 @@ namespace KütüphaneOtomasyon_0
                     }
          dr.Close();
          baglanti.Close(); 
-    //bu satırı kaldırmayı unutma!
+        //bu satırı kaldırmayı unutma!
         /* UyeAnasayfa form5 = new UyeAnasayfa();
          form5.Show();
          this.Hide(); */

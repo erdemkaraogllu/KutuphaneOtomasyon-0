@@ -30,13 +30,17 @@ namespace KütüphaneOtomasyon_0
                     string tc = dgvKitap.SelectedRows[i].Cells[1].Value.ToString();
                     string kitapAd = dgvKitap.SelectedRows[i].Cells[2].Value.ToString();
                     baglanti.Open();
-                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM emanet_kitap WHERE id = '" + id + "'", baglanti);
+                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM emanet_kitap WHERE emanet_id = '" + id + "'", baglanti);
                     komut.ExecuteNonQuery();
                     baglanti.Close();
 
                     MessageBox.Show("Emanet Kitap Teslim Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     dgvKitap.DataSource = yenileEmanet();
+
+                    /*
+                     
+                    */
 
                     baglanti.Open();
                     NpgsqlCommand komut1 = new NpgsqlCommand("SELECT FROM kitap_okundu(:_tc, :_kitap_ad)", baglanti);
@@ -164,7 +168,7 @@ namespace KütüphaneOtomasyon_0
         DataTable yenileEmanet()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT * FROM emanet_kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT emanet_id, tc, kitap_ad, emanet_date, teslim_date FROM emanet_kitap", baglanti);
             DataTable tablo1 = new DataTable();
             da.Fill(tablo1);
             baglanti.Close();
@@ -228,6 +232,11 @@ namespace KütüphaneOtomasyon_0
         private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
         {
             circularPictureBox1.BackColor = Color.Transparent;
+        }
+
+        private void dgvKitap_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

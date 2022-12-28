@@ -59,6 +59,28 @@ namespace KütüphaneOtomasyon_0
                         baglanti.Close();
                         if (karar == DialogResult.Yes)
                         {
+                            /* 
+                            create or replace function st_update(_tc character varying, _uye_ad character varying, _uye_soyad character varying,
+									 _uye_telefon character varying, _uye_sifre character varying)
+                            returns int as
+                            $$
+                            begin
+	                            update uyebilgi
+	                            set	
+		                            uye_ad = _uye_ad,
+		                            uye_soyad = _uye_soyad,
+		                            uye_telefon = _uye_telefon,
+		                            uye_sifre = _uye_sifre
+	                            where tc = _tc;
+	                            if found then 
+		                            return 1;
+	                            else 
+		                            return 0;
+	                            end if;
+                            end
+                            $$
+                            language plpgsql
+                            */
                             baglanti.Open();
                             NpgsqlCommand komut1 = new NpgsqlCommand("select * from st_update(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
                             komut1.Parameters.AddWithValue("_tc", txtTC.Text);

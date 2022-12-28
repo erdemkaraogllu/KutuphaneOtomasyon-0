@@ -44,25 +44,48 @@ namespace KütüphaneOtomasyon_0
 
                     if (sorgu == false)
                     {
-                        if (txtSifre.TextLength <= 4)
+                        if (txtSifre.TextLength < 4)
                         {
                             MessageBox.Show("En Az 4 Karakterli Bir Şifre Ekleyiniz !");
                         }
-                        baglanti.Open();
-                        NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
-                        komut1.Parameters.AddWithValue("_tc", txtTC.Text);
-                        komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text);
-                        komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text);
-                        komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
-                        komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
-                        komut1.ExecuteNonQuery();
-                        baglanti.Close();
+                        else
+                        {
+                            baglanti.Close();
+                            baglanti.Open();
+                            NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
+                            komut1.Parameters.AddWithValue("_tc", txtTC.Text);
+                            komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text);
+                            komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text);
+                            komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
+                            komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
+                            komut1.ExecuteNonQuery();
+                            baglanti.Close();
 
-                        MessageBox.Show("Kayıt Başarılı.");
+                            MessageBox.Show("Kayıt Başarılı.");
 
-                        UyeGiris form2 = new UyeGiris();
-                        form2.Show();
-                        this.Hide();
+                            UyeGiris form2 = new UyeGiris();
+                            form2.Show();
+                            this.Hide();
+
+                            /*
+                            create or replace function uye_insert(_tc character varying, _uye_ad character varying, _uye_soyad character varying,
+                                          _uye_telefon character varying, _uye_sifre character varying)
+                            returns int as 
+                            $$
+                            begin
+                                insert into uye_bilgi(tc, uye_ad, uye_soyad, uye_telefon, uye_sifre)
+                                values(_tc, _uye_ad, _uye_soyad, _uye_telefon, _uye_sifre);
+                                if found then --Başarılı
+                                    return 1;
+                                else return 0; --Hata
+                                end if;
+                            end
+                            $$
+                            language plpgsql
+                            */
+
+
+                        }
                     }
                 }
             }

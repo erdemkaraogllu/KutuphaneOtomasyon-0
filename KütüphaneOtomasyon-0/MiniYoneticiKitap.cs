@@ -47,7 +47,23 @@ namespace KütüphaneOtomasyon_0
                     }         
                     else
                     {
-                        
+                        /*
+                        create or replace function kitap_insert(_kitap_ad character varying, _yazar character varying, _tur character varying, 
+										_yayin_evi character varying, _basim character varying, _sayfa character varying)
+                        returns int as 
+                        $$
+                        begin
+	                        insert into kitap(kitap_ad, yazar, tur, yayin_evi, basim, sayfa)
+	                        values(_kitap_ad, _yazar, _tur, _yayin_evi, _basim, _sayfa);
+	                        if found then --Başarılı
+		                        return 1;
+	                        else return 0; --Hata
+	                        end if;
+                        end
+                        $$
+                        language plpgsql
+                        */
+
                         baglanti.Close();
                         baglanti.Open();
                         NpgsqlCommand kaydet = new NpgsqlCommand("SELECT FROM kitap_insert(:_kitap_ad, :_yazar, :_tur, :_yayin_evi, :_basim, :_sayfa)", baglanti);
@@ -111,7 +127,7 @@ namespace KütüphaneOtomasyon_0
         {
             if (MessageBox.Show(dgwTablo.Rows[e.RowIndex].Cells[1].Value + "\nAdlı Kitabı Silmek İstiyor Musunuz ?", "Kitap Silme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                NpgsqlCommand delete = new NpgsqlCommand("DELETE FROM kitap WHERE id=" + dgwTablo.Rows[e.RowIndex].Cells[0].Value, baglanti);
+                NpgsqlCommand delete = new NpgsqlCommand("DELETE FROM kitap WHERE kitap_id=" + dgwTablo.Rows[e.RowIndex].Cells[0].Value, baglanti);
                 baglanti.Open();
                 delete.ExecuteNonQuery();
                 baglanti.Close();
@@ -125,7 +141,7 @@ namespace KütüphaneOtomasyon_0
         DataTable yenile()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT id,kitap_ad,yazar,tur,yayin_evi,basim,sayfa FROM kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_id,kitap_ad,yazar,tur,yayin_evi,basim,sayfa FROM kitap", baglanti);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             baglanti.Close();

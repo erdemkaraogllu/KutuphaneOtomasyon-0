@@ -21,7 +21,7 @@ namespace KütüphaneOtomasyon_0
         NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
         private void MiniYoneticiAnasayfa_Load(object sender, EventArgs e)
         {
-            NpgsqlCommand uyesayısı = new NpgsqlCommand("SELECT count(id) FROM kitap", baglanti);
+            NpgsqlCommand uyesayısı = new NpgsqlCommand("SELECT count(kitap_id) FROM kitap", baglanti);
             baglanti.Open();
             string uye = uyesayısı.ExecuteScalar().ToString();
             baglanti.Close();

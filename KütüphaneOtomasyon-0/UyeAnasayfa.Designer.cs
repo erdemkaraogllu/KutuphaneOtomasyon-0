@@ -39,7 +39,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnListele = new System.Windows.Forms.Button();
             this.dgvDataOdunc = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvData = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +49,8 @@
             this.pbOkunanKitaplar = new System.Windows.Forms.PictureBox();
             this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.circularPictureBox3 = new KütüphaneOtomasyon_0.CircularPictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataOdunc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOkunanKitaplar)).BeginInit();
@@ -138,7 +138,8 @@
             this.dgvDataOdunc.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDataOdunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataOdunc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.Column1,
+            this.Column8});
             this.dgvDataOdunc.Location = new System.Drawing.Point(59, 549);
             this.dgvDataOdunc.MultiSelect = false;
             this.dgvDataOdunc.Name = "dgvDataOdunc";
@@ -148,14 +149,6 @@
             this.dgvDataOdunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDataOdunc.Size = new System.Drawing.Size(228, 127);
             this.dgvDataOdunc.TabIndex = 15;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "kitap_ad";
-            this.Column1.HeaderText = "KİTAP AD";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // dgvData
             // 
@@ -278,14 +271,21 @@
             this.circularPictureBox3.MouseEnter += new System.EventHandler(this.circularPictureBox3_MouseEnter);
             this.circularPictureBox3.MouseLeave += new System.EventHandler(this.circularPictureBox3_MouseLeave);
             // 
-            // label2
+            // Column1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(501, 601);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "label2";
+            this.Column1.DataPropertyName = "kitap_ad";
+            this.Column1.HeaderText = "KİTAP AD";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "age";
+            this.Column8.HeaderText = "KALAN GÜN";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // UyeAnasayfa
             // 
@@ -296,7 +296,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 800);
             this.ControlBox = false;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.circularPictureBox3);
             this.Controls.Add(this.circularPictureBox1);
             this.Controls.Add(this.pbOkunanKitaplar);
@@ -333,7 +332,6 @@
         private Button button5;
         private Button btnListele;
         private DataGridView dgvDataOdunc;
-        private DataGridViewTextBoxColumn Column1;
         private DataGridView dgvData;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
@@ -344,6 +342,7 @@
         private PictureBox pbOkunanKitaplar;
         private CircularPictureBox circularPictureBox1;
         private CircularPictureBox circularPictureBox3;
-        private Label label2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column8;
     }
 }

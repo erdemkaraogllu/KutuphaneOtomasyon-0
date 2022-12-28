@@ -35,6 +35,7 @@ namespace KütüphaneOtomasyon_0
             try
             {
                 baglanti.Open();
+               // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%')";
                 string sorgu = "SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%'";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
@@ -64,8 +65,8 @@ namespace KütüphaneOtomasyon_0
         {
             try
             {
-                txtAra.Clear();
-                string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap";
+                txtAra.Clear();                
+                string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -112,6 +113,21 @@ namespace KütüphaneOtomasyon_0
                     string TC = UyeGiris.deger;
                     string KitapAd = dgvData.CurrentRow.Cells[0].Value.ToString();
 
+                    /*                    
+                    create or replace function emanet_al(_tc character varying, _kitap_ad character varying)
+                    returns int as 
+                    $$
+                    begin
+	                    insert into emanet_kitap(tc,kitap_ad,emanet_date,teslim_date)
+	                    values(_tc, _kitap_ad, CURRENT_DATE, CURRENT_DATE+3);
+	                    if found then --Başarılı
+		                    return 1;
+	                    else return 0; --Hata
+	                    end if;
+                    end
+                    $$
+                    language plpgsql 
+                    */
 
                     NpgsqlCommand komut = new NpgsqlCommand("SELECT FROM emanet_al(:_tc, :_kitap_ad)", baglanti);
                     komut.Parameters.AddWithValue("_tc", TC);
@@ -135,7 +151,7 @@ namespace KütüphaneOtomasyon_0
         DataTable yenileKitap()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)", baglanti);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             baglanti.Close();
@@ -145,7 +161,7 @@ namespace KütüphaneOtomasyon_0
         {
             string deger1 = UyeGiris.deger;
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad FROM emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select kitap_ad, age(teslim_date,current_date) from emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
             DataTable tablo1 = new DataTable();
             da.Fill(tablo1);
             baglanti.Close();
@@ -189,5 +205,7 @@ namespace KütüphaneOtomasyon_0
         {
             circularPictureBox3.BackColor = Color.Transparent;
         }
+
+      
     }
 }

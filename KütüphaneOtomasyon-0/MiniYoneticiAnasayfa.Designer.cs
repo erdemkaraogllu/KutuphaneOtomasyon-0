@@ -71,11 +71,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(329, 223);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 27);
+            this.label1.Size = new System.Drawing.Size(319, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "TOPLAM KULLANICI SAYISI :";
             // 
@@ -83,47 +83,47 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(329, 347);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(278, 27);
+            this.label2.Size = new System.Drawing.Size(263, 31);
             this.label2.TabIndex = 4;
-            this.label2.Text = "TOPLAM KITAP SAYISI :";
+            this.label2.Text = "TOPLAM KİTAP SAYISI :";
             // 
             // lblKullanıcıSayisi
             // 
             this.lblKullanıcıSayisi.AutoSize = true;
             this.lblKullanıcıSayisi.BackColor = System.Drawing.Color.Transparent;
-            this.lblKullanıcıSayisi.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblKullanıcıSayisi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblKullanıcıSayisi.ForeColor = System.Drawing.Color.White;
             this.lblKullanıcıSayisi.Location = new System.Drawing.Point(669, 223);
             this.lblKullanıcıSayisi.Name = "lblKullanıcıSayisi";
-            this.lblKullanıcıSayisi.Size = new System.Drawing.Size(0, 27);
+            this.lblKullanıcıSayisi.Size = new System.Drawing.Size(0, 31);
             this.lblKullanıcıSayisi.TabIndex = 5;
             // 
             // lblKitapSayisi
             // 
             this.lblKitapSayisi.AutoSize = true;
             this.lblKitapSayisi.BackColor = System.Drawing.Color.Transparent;
-            this.lblKitapSayisi.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblKitapSayisi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblKitapSayisi.ForeColor = System.Drawing.Color.White;
             this.lblKitapSayisi.Location = new System.Drawing.Point(613, 347);
             this.lblKitapSayisi.Name = "lblKitapSayisi";
-            this.lblKitapSayisi.Size = new System.Drawing.Size(0, 27);
+            this.lblKitapSayisi.Size = new System.Drawing.Size(0, 31);
             this.lblKitapSayisi.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(329, 474);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(278, 27);
+            this.label3.Size = new System.Drawing.Size(262, 31);
             this.label3.TabIndex = 7;
-            this.label3.Text = "EMANET KITAP SAYISI :";
+            this.label3.Text = "EMANET KİTAP SAYISI :";
             // 
             // pictureBox4
             // 
@@ -140,20 +140,20 @@
             // 
             this.lblEmanetKitapSayisi.AutoSize = true;
             this.lblEmanetKitapSayisi.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmanetKitapSayisi.Font = new System.Drawing.Font("SansSerif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEmanetKitapSayisi.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEmanetKitapSayisi.ForeColor = System.Drawing.Color.White;
             this.lblEmanetKitapSayisi.Location = new System.Drawing.Point(613, 474);
             this.lblEmanetKitapSayisi.Name = "lblEmanetKitapSayisi";
-            this.lblEmanetKitapSayisi.Size = new System.Drawing.Size(0, 27);
+            this.lblEmanetKitapSayisi.Size = new System.Drawing.Size(0, 31);
             this.lblEmanetKitapSayisi.TabIndex = 9;
             // 
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
-            this.circularPictureBox1.Location = new System.Drawing.Point(854, 12);
+            this.circularPictureBox1.Location = new System.Drawing.Point(838, 12);
             this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(34, 34);
+            this.circularPictureBox1.Size = new System.Drawing.Size(50, 50);
             this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.circularPictureBox1.TabIndex = 10;
             this.circularPictureBox1.TabStop = false;

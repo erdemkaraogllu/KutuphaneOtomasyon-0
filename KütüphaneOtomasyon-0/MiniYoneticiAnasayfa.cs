@@ -49,11 +49,13 @@ namespace KütüphaneOtomasyon_0
         private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
         {
             circularPictureBox1.BackColor = Color.Red;
+            circularPictureBox1.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
         {
             circularPictureBox1.BackColor = Color.Transparent;
+            circularPictureBox1.BorderStyle = BorderStyle.None;
         }
     }
 }

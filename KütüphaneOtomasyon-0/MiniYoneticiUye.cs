@@ -22,70 +22,7 @@ namespace KütüphaneOtomasyon_0
  
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < dgvKitap.SelectedRows.Count; i++)
-                {
-                    string id = dgvKitap.SelectedRows[i].Cells[0].Value.ToString();
-                    string tc = dgvKitap.SelectedRows[i].Cells[1].Value.ToString();
-                    string kitapAd = dgvKitap.SelectedRows[i].Cells[2].Value.ToString();
-                    baglanti.Open();
-                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM emanet_kitap WHERE emanet_id = '" + id + "'", baglanti);
-                    komut.ExecuteNonQuery();
-                    baglanti.Close();
-
-                    MessageBox.Show("Emanet Kitap Teslim Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dgvKitap.DataSource = yenileEmanet();
-
-                    /*
-                     
-                    */
-
-                    baglanti.Open();
-                    NpgsqlCommand komut1 = new NpgsqlCommand("SELECT FROM kitap_okundu(:_tc, :_kitap_ad)", baglanti);
-                    komut1.Parameters.AddWithValue("_tc", tc);
-                    komut1.Parameters.AddWithValue("_kitap_ad", kitapAd);
-                    komut1.ExecuteNonQuery();
-                    baglanti.Close();
-                }
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Kitap Teslim Edilemedi !", "HATA " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-            }
-        }
-
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            pbKayıtSil.BackColor = Color.Red;
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pbKayıtSil.BackColor = Color.Transparent;
-        }
-
-        private void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            pbOduncVer.BackColor = Color.Green;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pbOduncVer.BackColor= Color.Transparent;
-        }
-
-        private void pictureBox4_MouseEnter(object sender, EventArgs e)
-        {
-            pbAra.BackColor = Color.Orange;
-        }
-
-        private void pictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            pbAra.BackColor = Color.Transparent;
+            
         }
 
         private void MiniYoneticiUye_Load(object sender, EventArgs e)
@@ -109,52 +46,6 @@ namespace KütüphaneOtomasyon_0
             
         }
 
-        private void pbAra_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                baglanti.Open();
-                string sorgu = "SELECT * FROM uyebilgi WHERE tc like '" + txtAra.Text + "%'";
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "uyebilgi");
-                dgvUye.DataSource = ds.Tables["uyebilgi"];
-                baglanti.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Arama Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-            }
-        }
-
-        private void pbKayıtSil_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                for (int i = 0; i < dgvUye.SelectedRows.Count; i++)
-                {
-                    baglanti.Open();
-                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM uyebilgi WHERE tc = '" + dgvUye.SelectedRows[i].Cells[0].Value + "'", baglanti);                   
-                    komut.ExecuteNonQuery();
-                    baglanti.Close();
-
-                    MessageBox.Show("Üye Silindi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dgvUye.DataSource = yenileUye();
-
-                }
-                    //MessageBox.Show("Silmek İstediğiniz Üyeyi Seçiniz !","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                
-            }
-            catch(Exception ex )
-            {
-                MessageBox.Show("Kullanıcı Silinemedi","HATA " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-            }
-
-            
-        }
-
         DataTable yenileUye()
         {
             baglanti.Open();
@@ -173,35 +64,6 @@ namespace KütüphaneOtomasyon_0
             da.Fill(tablo1);
             baglanti.Close();
             return tablo1;
-        }
-
-        private void pbEmanetAra_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                baglanti.Open();
-                string sorgu0 = "SELECT * FROM emanet_kitap WHERE tc like '" + txtEmanetAra.Text + "%'";
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu0, baglanti);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "emanetkitap");
-                dgvKitap.DataSource = ds.Tables["emanetkitap"];
-                baglanti.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Arama Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-            }
-        }
-
-        private void pbEmanetAra_MouseEnter(object sender, EventArgs e)
-        {
-            pbEmanetAra.BackColor = Color.Orange;
-        }
-
-        private void pbEmanetAra_MouseLeave(object sender, EventArgs e)
-        {
-            pbEmanetAra.BackColor = Color.Transparent;
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
@@ -237,6 +99,155 @@ namespace KütüphaneOtomasyon_0
         private void dgvKitap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void circularPictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor = Color.Red;
+            circularPictureBox2.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor = Color.Transparent;
+            circularPictureBox2.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dgvUye.SelectedRows.Count; i++)
+                {
+                    baglanti.Open();
+                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM uyebilgi WHERE tc = '" + dgvUye.SelectedRows[i].Cells[0].Value + "'", baglanti);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+
+                    MessageBox.Show("Üye Silindi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvUye.DataSource = yenileUye();
+
+                }
+                //MessageBox.Show("Silmek İstediğiniz Üyeyi Seçiniz !","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kullanıcı Silinemedi", "HATA " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
+        }
+
+        private void circularPictureBox3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti.Open();
+                string sorgu = "SELECT * FROM uyebilgi WHERE tc like '" + txtAra.Text + "%'";
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "uyebilgi");
+                dgvUye.DataSource = ds.Tables["uyebilgi"];
+                baglanti.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arama Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
+        }
+
+        private void circularPictureBox4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti.Open();
+                string sorgu0 = "SELECT * FROM emanet_kitap WHERE tc like '" + txtEmanetAra.Text + "%'";
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu0, baglanti);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "emanetkitap");
+                dgvKitap.DataSource = ds.Tables["emanetkitap"];
+                baglanti.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arama Hatası" + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
+        }
+
+        private void circularPictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor = Color.Yellow;
+            circularPictureBox3.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor = Color.Transparent;
+            circularPictureBox3.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox4.BackColor = Color.Yellow;
+            circularPictureBox4.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox4.BackColor = Color.Transparent;
+            circularPictureBox4.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox5.BackColor = Color.Green;
+            circularPictureBox5.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox5.BackColor = Color.Transparent;
+            circularPictureBox5.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < dgvKitap.SelectedRows.Count; i++)
+                {
+                    string id = dgvKitap.SelectedRows[i].Cells[0].Value.ToString();
+                    string tc = dgvKitap.SelectedRows[i].Cells[1].Value.ToString();
+                    string kitapAd = dgvKitap.SelectedRows[i].Cells[2].Value.ToString();
+                    baglanti.Open();
+                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM emanet_kitap WHERE emanet_id = '" + id + "'", baglanti);
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+
+                    MessageBox.Show("Emanet Kitap Teslim Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvKitap.DataSource = yenileEmanet();
+
+                    /*
+                     
+                    */
+
+                    baglanti.Open();
+                    NpgsqlCommand komut1 = new NpgsqlCommand("SELECT FROM kitap_okundu(:_tc, :_kitap_ad)", baglanti);
+                    komut1.Parameters.AddWithValue("_tc", tc);
+                    komut1.Parameters.AddWithValue("_kitap_ad", kitapAd);
+                    komut1.ExecuteNonQuery();
+                    baglanti.Close();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kitap Teslim Edilemedi !", "HATA " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
         }
     }
 }

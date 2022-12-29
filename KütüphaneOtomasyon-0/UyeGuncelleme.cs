@@ -117,5 +117,10 @@ namespace KütüphaneOtomasyon_0
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//sadece rakam
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

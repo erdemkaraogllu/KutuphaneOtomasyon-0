@@ -23,85 +23,7 @@ namespace KütüphaneOtomasyon_0
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             
-            try
-            {
-                
-                
-                if (txtKitapAd.TextLength == 0 || txtYazarAd.TextLength == 0 || cbKitapTur.TabIndex == 0 || txtYayınEvi.TextLength == 0 || txtBasim.TextLength == 0 || txtSayfa.TextLength == 0)
-                {
-                    MessageBox.Show("Boş Alan Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {   
-                    baglanti.Open();
-                    NpgsqlCommand komut0 = new NpgsqlCommand("Select * from kitap where kitap_ad = '" + txtKitapAd.Text.ToUpper() + "'", baglanti);
-                    NpgsqlDataReader dr = komut0.ExecuteReader();
-                    
-                    
-                    if (dr.Read())
-                    {
-                        MessageBox.Show("Bu Kitap Kayıtlarda Mevcut", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        baglanti.Close();
-                        
-                        
-                    }         
-                    else
-                    {
-                        /*
-                        create or replace function kitap_insert(_kitap_ad character varying, _yazar character varying, _tur character varying, 
-										_yayin_evi character varying, _basim character varying, _sayfa character varying)
-                        returns int as 
-                        $$
-                        begin
-	                        insert into kitap(kitap_ad, yazar, tur, yayin_evi, basim, sayfa)
-	                        values(_kitap_ad, _yazar, _tur, _yayin_evi, _basim, _sayfa);
-	                        if found then --Başarılı
-		                        return 1;
-	                        else return 0; --Hata
-	                        end if;
-                        end
-                        $$
-                        language plpgsql
-                        */
-
-                        baglanti.Close();
-                        baglanti.Open();
-                        NpgsqlCommand kaydet = new NpgsqlCommand("SELECT FROM kitap_insert(:_kitap_ad, :_yazar, :_tur, :_yayin_evi, :_basim, :_sayfa)", baglanti);
-                        kaydet.Parameters.AddWithValue("_kitap_ad", txtKitapAd.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_yazar", txtYazarAd.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_tur", cbKitapTur.SelectedItem.ToString().ToUpper());
-                        kaydet.Parameters.AddWithValue("_yayin_evi", txtYayınEvi.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_basim", txtBasim.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_sayfa", txtSayfa.Text.ToUpper());
-                        kaydet.ExecuteNonQuery();
-                        baglanti.Close();
-
-                        MessageBox.Show("Kitap Eklendi");
-                        dgwTablo.DataSource = yenile();
-                        foreach (Control item in this.Controls)
-                        {
-                            if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
-                        }
-                        
-                    }
-                    dr.Close();
-                }            
-            }
-            catch(Exception ex)
-            {
-                baglanti.Close();
-                MessageBox.Show("Kayıt Hatası ! " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
-            }
-        }
-
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            pictureBox2.BackColor = Color.Green;
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.BackColor = Color.Transparent;
+            
         }
 
         private void MiniYoneticiKitap_Load(object sender, EventArgs e)
@@ -162,11 +84,98 @@ namespace KütüphaneOtomasyon_0
         private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
         {
             circularPictureBox1.BackColor = Color.Red;
+            circularPictureBox1.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
         {
             circularPictureBox1.BackColor = Color.Transparent;
+            circularPictureBox1.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                if (txtKitapAd.TextLength == 0 || txtYazarAd.TextLength == 0 || cbKitapTur.TabIndex == 0 || txtYayınEvi.TextLength == 0 || txtBasim.TextLength == 0 || txtSayfa.TextLength == 0)
+                {
+                    MessageBox.Show("Boş Alan Bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    baglanti.Open();
+                    NpgsqlCommand komut0 = new NpgsqlCommand("Select * from kitap where kitap_ad = '" + txtKitapAd.Text.ToUpper() + "'", baglanti);
+                    NpgsqlDataReader dr = komut0.ExecuteReader();
+
+
+                    if (dr.Read())
+                    {
+                        MessageBox.Show("Bu Kitap Kayıtlarda Mevcut", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        baglanti.Close();
+
+
+                    }
+                    else
+                    {
+                        /*
+                        create or replace function kitap_insert(_kitap_ad character varying, _yazar character varying, _tur character varying, 
+										_yayin_evi character varying, _basim character varying, _sayfa character varying)
+                        returns int as 
+                        $$
+                        begin
+	                        insert into kitap(kitap_ad, yazar, tur, yayin_evi, basim, sayfa)
+	                        values(_kitap_ad, _yazar, _tur, _yayin_evi, _basim, _sayfa);
+	                        if found then --Başarılı
+		                        return 1;
+	                        else return 0; --Hata
+	                        end if;
+                        end
+                        $$
+                        language plpgsql
+                        */
+
+                        baglanti.Close();
+                        baglanti.Open();
+                        NpgsqlCommand kaydet = new NpgsqlCommand("SELECT FROM kitap_insert(:_kitap_ad, :_yazar, :_tur, :_yayin_evi, :_basim, :_sayfa)", baglanti);
+                        kaydet.Parameters.AddWithValue("_kitap_ad", txtKitapAd.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_yazar", txtYazarAd.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_tur", cbKitapTur.SelectedItem.ToString().ToUpper());
+                        kaydet.Parameters.AddWithValue("_yayin_evi", txtYayınEvi.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_basim", txtBasim.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_sayfa", txtSayfa.Text.ToUpper());
+                        kaydet.ExecuteNonQuery();
+                        baglanti.Close();
+
+                        MessageBox.Show("Kitap Eklendi");
+                        dgwTablo.DataSource = yenile();
+                        foreach (Control item in this.Controls)
+                        {
+                            if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
+                        }
+
+                    }
+                    dr.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                baglanti.Close();
+                MessageBox.Show("Kayıt Hatası ! " + ex.Message + MessageBoxButtons.OK + MessageBoxIcon.Error);
+            }
+        }
+
+        private void circularPictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor = Color.Green;
+            circularPictureBox2.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor = Color.Transparent;
+            circularPictureBox2.BorderStyle = BorderStyle.None;
         }
     }
 }

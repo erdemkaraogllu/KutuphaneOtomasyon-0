@@ -18,30 +18,7 @@ namespace KütüphaneOtomasyon_0
             InitializeComponent();
         }
             NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu");   
-        private void circularPictureBox2_Click(object sender, EventArgs e)
-        {
-            ActiveForm.Close();
-        }
-
-        private void circularPictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            circularPictureBox2.BackColor = Color.Red;
-        }
-
-        private void circularPictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            circularPictureBox2.BackColor = Color.Transparent;
-        }
-
-        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            circularPictureBox1.BackColor = Color.Green;
-        }
-
-        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            circularPictureBox1.BackColor = Color.Transparent;
-        }
+     
 
         private void SifreUnuttum_Load(object sender, EventArgs e)
         {
@@ -50,11 +27,33 @@ namespace KütüphaneOtomasyon_0
 
         private void circularPictureBox1_Click(object sender, EventArgs e)
         {   
+            
+        }
+
+        private void circularPictureBox3_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
+
+        private void circularPictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor= Color.White;
+            circularPictureBox3.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox3.BackColor = Color.Transparent;
+            circularPictureBox3.BorderStyle = BorderStyle.None;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             bool sorgu = false;
             baglanti.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '"+ txtTC.Text +"' and uye_telefon = '"+ txtTelefon.Text +"'", baglanti);
+            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '" + txtTC.Text + "' and uye_telefon = '" + txtTelefon.Text + "'", baglanti);
             NpgsqlDataReader dr = komut.ExecuteReader();
-            
+
 
             if (dr.Read())
             {
@@ -63,27 +62,44 @@ namespace KütüphaneOtomasyon_0
                 baglanti.Close();
             }
 
-                if (sorgu == true)
-                {                
-                    baglanti.Open();
-                    NpgsqlCommand komut1 = new NpgsqlCommand("UPDATE uyebilgi SET uye_sifre = '" + txtŞifre.Text + "' WHERE tc = '" + txtTC.Text + "' ", baglanti);
-                    komut1.ExecuteNonQuery();
-                    baglanti.Close();
+            if (sorgu == true)
+            {
+                baglanti.Open();
+                NpgsqlCommand komut1 = new NpgsqlCommand("UPDATE uyebilgi SET uye_sifre = '" + txtŞifre.Text + "' WHERE tc = '" + txtTC.Text + "' ", baglanti);
+                komut1.ExecuteNonQuery();
+                baglanti.Close();
 
 
-                    MessageBox.Show("Şifre Güncellendi! Yeni Şifreniz İle Giriş Yapabilirsiniz!", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ActiveForm.Close();
-                }
-                else if(sorgu == false)
+                MessageBox.Show("Şifre Güncellendi! Yeni Şifreniz İle Giriş Yapabilirsiniz!", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ActiveForm.Close();
+            }
+            else if (sorgu == false)
+            {
+                MessageBox.Show("Bilgileriniz Yanlış!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                foreach (Control item in this.Controls)
                 {
-                    MessageBox.Show("Bilgileriniz Yanlış!", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    foreach (Control item in this.Controls)
-                    {
-                        if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
-                    }
+                    if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
                 }
+            }
             baglanti.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.CheckState == CheckState.Checked)
+            {
+                txtŞifre.UseSystemPasswordChar = true;
+            }
+            else if (checkBox1.CheckState == CheckState.Unchecked)
+            {
+                txtŞifre.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void txtTC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);//sadece rakam
         }
     }
 }

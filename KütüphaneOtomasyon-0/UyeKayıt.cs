@@ -63,7 +63,7 @@ namespace KütüphaneOtomasyon_0
 
                             MessageBox.Show("Kayıt Başarılı.");
 
-                            UyeGiris form2 = new UyeGiris();
+                            Anasayfa form2 = new Anasayfa();
                             form2.Show();
                             this.Hide();
 
@@ -119,12 +119,15 @@ namespace KütüphaneOtomasyon_0
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            UyeGiris form2 = new UyeGiris();
-            form2.Show();
-            this.Hide();
+            ActiveForm.Close();
         }
 
         private void txtTC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -29,106 +29,109 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YoneticiAnasayfa));
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.circularPictureBox4 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.circularPictureBox2 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.circularPictureBox3 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 736);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ÇIKIŞ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Controls.Add(this.circularPictureBox4);
+            this.panel1.Controls.Add(this.circularPictureBox2);
+            this.panel1.Controls.Add(this.circularPictureBox3);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(118, 802);
+            this.panel1.Size = new System.Drawing.Size(143, 729);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // pictureBox2
+            // circularPictureBox4
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 322);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(116, 106);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.circularPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox4.Image")));
+            this.circularPictureBox4.Location = new System.Drawing.Point(6, 59);
+            this.circularPictureBox4.Name = "circularPictureBox4";
+            this.circularPictureBox4.Size = new System.Drawing.Size(130, 130);
+            this.circularPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox4.TabIndex = 8;
+            this.circularPictureBox4.TabStop = false;
+            this.circularPictureBox4.Click += new System.EventHandler(this.circularPictureBox4_Click);
+            this.circularPictureBox4.MouseEnter += new System.EventHandler(this.circularPictureBox4_MouseEnter);
+            this.circularPictureBox4.MouseLeave += new System.EventHandler(this.circularPictureBox4_MouseLeave);
             // 
-            // pictureBox3
+            // circularPictureBox2
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 581);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(116, 106);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
-            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
+            this.circularPictureBox2.Location = new System.Drawing.Point(6, 541);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(130, 130);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox2.TabIndex = 7;
+            this.circularPictureBox2.TabStop = false;
+            this.circularPictureBox2.Click += new System.EventHandler(this.circularPictureBox2_Click);
+            this.circularPictureBox2.MouseEnter += new System.EventHandler(this.circularPictureBox2_MouseEnter);
+            this.circularPictureBox2.MouseLeave += new System.EventHandler(this.circularPictureBox2_MouseLeave);
             // 
-            // pictureBox1
+            // circularPictureBox3
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 106);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
+            this.circularPictureBox3.Location = new System.Drawing.Point(6, 303);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(130, 130);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox3.TabIndex = 7;
+            this.circularPictureBox3.TabStop = false;
+            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
+            this.circularPictureBox3.MouseEnter += new System.EventHandler(this.circularPictureBox3_MouseEnter);
+            this.circularPictureBox3.MouseLeave += new System.EventHandler(this.circularPictureBox3_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel2.Controls.Add(this.circularPictureBox1);
+            this.panel2.Location = new System.Drawing.Point(1027, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(143, 729);
+            this.panel2.TabIndex = 6;
             // 
             // circularPictureBox1
             // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
-            this.circularPictureBox1.Location = new System.Drawing.Point(1138, 12);
+            this.circularPictureBox1.Location = new System.Drawing.Point(40, 641);
             this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 5;
+            this.circularPictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 0;
             this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
+            this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter_1);
+            this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave_1);
             // 
             // YoneticiAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.ControlBox = false;
-            this.Controls.Add(this.circularPictureBox1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1200, 800);
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "YoneticiAnasayfa";
@@ -137,21 +140,21 @@
             this.Text = "YÖNETİCİ ANASAYFA";
             this.Load += new System.EventHandler(this.YoneticiAnasayfa_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Button button1;
         private Panel panel1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private Panel panel2;
         private CircularPictureBox circularPictureBox1;
+        private CircularPictureBox circularPictureBox2;
+        private CircularPictureBox circularPictureBox3;
+        private CircularPictureBox circularPictureBox4;
     }
 }

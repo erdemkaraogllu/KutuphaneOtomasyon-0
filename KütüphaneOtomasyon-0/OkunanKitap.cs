@@ -41,5 +41,17 @@ namespace KütüphaneOtomasyon_0
         {
             ActiveForm.Close();
         }
+
+        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Red;
+            circularPictureBox1.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox1.BorderStyle = BorderStyle.None;
+            circularPictureBox1.BackColor = Color.Transparent;
+        }
     }
 }

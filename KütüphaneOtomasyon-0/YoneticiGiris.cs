@@ -19,12 +19,6 @@ namespace KütüphaneOtomasyon_0
         }
             NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            Anasayfa form1 = new Anasayfa();
-            form1.Show();
-            this.Hide();
-        }
 
         private void button1_Click(object sender, EventArgs e)
 
@@ -49,19 +43,35 @@ namespace KütüphaneOtomasyon_0
 
             if (blnfound == false)
              {
-                MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(" Giriş Bİlgileriniz Hatalı Tekrar Deneyin.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
              }
         dr.Close();
         baglanti.Close();
               
-      /*  YoneticiAnasayfa form6 = new YoneticiAnasayfa();
-        form6.ShowDialog();
-        this.Hide(); */
         }
 
         private void YoneticiGiris_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.White;
+            circularPictureBox1.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Transparent;
+            circularPictureBox1.BorderStyle = BorderStyle.None;
+        }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+            Anasayfa form1 = new Anasayfa();
+            form1.Show();
+            this.Hide();
         }
     }
 }

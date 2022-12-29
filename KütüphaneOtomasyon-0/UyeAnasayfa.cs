@@ -36,7 +36,7 @@ namespace KütüphaneOtomasyon_0
             {
                 baglanti.Open();
                // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%')";
-                string sorgu = "SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%'";
+                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%'";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "kutuphane");
@@ -51,13 +51,14 @@ namespace KütüphaneOtomasyon_0
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            dgvDataOdunc.DataSource = yenileEmanet();
+            dgvData.DataSource = yenileKitap();
             string deger1 = UyeGiris.deger;
             string degerAd = UyeGiris.ad;
             string degerSoyad = UyeGiris.soyad;
 
             label1.Text = degerAd + " " + degerSoyad;
-            dgvDataOdunc.DataSource = yenileEmanet();
-            dgvData.DataSource = yenileKitap();
+            
             
         }
 
@@ -65,8 +66,9 @@ namespace KütüphaneOtomasyon_0
         {
             try
             {
-                txtAra.Clear();                
-                string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)";
+                txtAra.Clear();
+                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap";
+               // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -109,36 +111,53 @@ namespace KütüphaneOtomasyon_0
                 {
                     dr.Close();
                     baglanti.Close();
-                    baglanti.Open();
-                    string TC = UyeGiris.deger;
+
                     string KitapAd = dgvData.CurrentRow.Cells[0].Value.ToString();
+                    baglanti.Open();
+                    NpgsqlCommand komut3 = new NpgsqlCommand("SELECT * FROM emanet_kitap WHERE kitap_ad = '" + KitapAd + "'", baglanti);
+                    NpgsqlDataReader dr2 = komut3.ExecuteReader();
 
-                    /*                    
-                    create or replace function emanet_al(_tc character varying, _kitap_ad character varying)
-                    returns int as 
-                    $$
-                    begin
-	                    insert into emanet_kitap(tc,kitap_ad,emanet_date,teslim_date)
-	                    values(_tc, _kitap_ad, CURRENT_DATE, CURRENT_DATE+3);
-	                    if found then --Başarılı
-		                    return 1;
-	                    else return 0; --Hata
-	                    end if;
-                    end
-                    $$
-                    language plpgsql 
-                    */
+                    if (dr2.Read())
+                    {
+                        MessageBox.Show("Bu Kitap Başka Bir Üye Tarafından Emanet ALındı", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dr2.Close();
+                        baglanti.Close();
+                    }
+                    else
+                    {
+                        dr2.Close();
+                        baglanti.Close();
+                        baglanti.Open();
+                        string TC = UyeGiris.deger;
 
-                    NpgsqlCommand komut = new NpgsqlCommand("SELECT FROM emanet_al(:_tc, :_kitap_ad)", baglanti);
-                    komut.Parameters.AddWithValue("_tc", TC);
-                    komut.Parameters.AddWithValue("_kitap_ad", KitapAd);
-                    komut.ExecuteNonQuery();
-                    baglanti.Close();
 
-                    MessageBox.Show("Kitap Emanet Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        /*                    
+                        create or replace function emanet_al(_tc character varying, _kitap_ad character varying)
+                        returns int as 
+                        $$
+                        begin
+                            insert into emanet_kitap(tc,kitap_ad,emanet_date,teslim_date)
+                            values(_tc, _kitap_ad, CURRENT_DATE, CURRENT_DATE+3);
+                            if found then --Başarılı
+                                return 1;
+                            else return 0; --Hata
+                            end if;
+                        end
+                        $$
+                        language plpgsql 
+                        */
 
-                    dgvData.DataSource = yenileKitap();
-                    dgvDataOdunc.DataSource = yenileEmanet();
+                        NpgsqlCommand komut = new NpgsqlCommand("SELECT FROM emanet_al(:_tc, :_kitap_ad)", baglanti);
+                        komut.Parameters.AddWithValue("_tc", TC);
+                        komut.Parameters.AddWithValue("_kitap_ad", KitapAd);
+                        komut.ExecuteNonQuery();
+                        baglanti.Close();
+
+                        MessageBox.Show("Kitap Emanet Alındı !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        dgvData.DataSource = yenileKitap();
+                        dgvDataOdunc.DataSource = yenileEmanet();
+                    }
                 }
                 
             }
@@ -168,27 +187,6 @@ namespace KütüphaneOtomasyon_0
             return tablo1;
         }       
 
-        private void pbOkunanKitaplar_MouseEnter(object sender, EventArgs e)
-        {
-            pbOkunanKitaplar.BackColor = Color.Red;
-        }
-
-        private void pbOkunanKitaplar_MouseLeave(object sender, EventArgs e)
-        {
-            pbOkunanKitaplar.BackColor = Color.FromArgb(153, 217, 234);
-        }
-
-        private void pbOkunanKitaplar_Click(object sender, EventArgs e)
-        {
-            var form1 = new OkunanKitap
-            {
-                ShowInTaskbar = false,
-                MinimizeBox = false,
-                MaximizeBox = false
-            };
-            form1.ShowDialog(this);
-        }
-
         private void circularPictureBox3_Click(object sender, EventArgs e)
         {
             Anasayfa form1 = new Anasayfa();
@@ -199,13 +197,36 @@ namespace KütüphaneOtomasyon_0
         private void circularPictureBox3_MouseEnter(object sender, EventArgs e)
         {
             circularPictureBox3.BackColor = Color.Red;
+            circularPictureBox3.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void circularPictureBox3_MouseLeave(object sender, EventArgs e)
         {
             circularPictureBox3.BackColor = Color.Transparent;
+            circularPictureBox3.BorderStyle = BorderStyle.None;
         }
 
-      
+        private void circularPictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor = Color.Red;
+            circularPictureBox2.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox2.BackColor= Color.White;
+            circularPictureBox2.BorderStyle= BorderStyle.None;
+        }
+
+        private void circularPictureBox2_Click(object sender, EventArgs e)
+        {
+            var form1 = new OkunanKitap
+            {
+                ShowInTaskbar = false,
+                MinimizeBox = false,
+                MaximizeBox = false
+            };
+            form1.ShowDialog(this);
+        }
     }
 }

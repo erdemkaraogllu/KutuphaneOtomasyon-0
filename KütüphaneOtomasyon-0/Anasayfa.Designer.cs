@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anasayfa));
             this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.circularPictureBox2 = new KütüphaneOtomasyon_0.CircularPictureBox();
-            this.cpKapat = new KütüphaneOtomasyon_0.CircularPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.linkUyeOl = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpKapat)).BeginInit();
             this.SuspendLayout();
             // 
             // circularPictureBox1
@@ -44,7 +42,7 @@
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(637, 368);
             this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(165, 165);
+            this.circularPictureBox1.Size = new System.Drawing.Size(180, 180);
             this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.circularPictureBox1.TabIndex = 3;
             this.circularPictureBox1.TabStop = false;
@@ -58,7 +56,7 @@
             this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
             this.circularPictureBox2.Location = new System.Drawing.Point(396, 368);
             this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(165, 168);
+            this.circularPictureBox2.Size = new System.Drawing.Size(180, 180);
             this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.circularPictureBox2.TabIndex = 4;
             this.circularPictureBox2.TabStop = false;
@@ -66,30 +64,19 @@
             this.circularPictureBox2.MouseEnter += new System.EventHandler(this.circularPictureBox2_MouseEnter);
             this.circularPictureBox2.MouseLeave += new System.EventHandler(this.circularPictureBox2_MouseLeave);
             // 
-            // cpKapat
+            // linkUyeOl
             // 
-            this.cpKapat.BackColor = System.Drawing.Color.Transparent;
-            this.cpKapat.Image = ((System.Drawing.Image)(resources.GetObject("cpKapat.Image")));
-            this.cpKapat.Location = new System.Drawing.Point(1154, 12);
-            this.cpKapat.Name = "cpKapat";
-            this.cpKapat.Size = new System.Drawing.Size(34, 34);
-            this.cpKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cpKapat.TabIndex = 5;
-            this.cpKapat.TabStop = false;
-            this.cpKapat.Click += new System.EventHandler(this.cpKapat_Click);
-            this.cpKapat.MouseEnter += new System.EventHandler(this.cpKapat_MouseEnter);
-            this.cpKapat.MouseLeave += new System.EventHandler(this.cpKapat_MouseLeave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gabriola", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(440, 744);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 31);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Hazırlayanlar : Ayşegül Kurtuluş Erdem Karaoğlu";
+            this.linkUyeOl.AutoSize = true;
+            this.linkUyeOl.BackColor = System.Drawing.Color.Transparent;
+            this.linkUyeOl.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.linkUyeOl.LinkColor = System.Drawing.Color.Khaki;
+            this.linkUyeOl.Location = new System.Drawing.Point(576, 584);
+            this.linkUyeOl.Name = "linkUyeOl";
+            this.linkUyeOl.Size = new System.Drawing.Size(69, 23);
+            this.linkUyeOl.TabIndex = 6;
+            this.linkUyeOl.TabStop = true;
+            this.linkUyeOl.Text = "Üye Ol";
+            this.linkUyeOl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkUyeOl_LinkClicked);
             // 
             // Anasayfa
             // 
@@ -97,21 +84,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cpKapat);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.linkUyeOl);
             this.Controls.Add(this.circularPictureBox2);
             this.Controls.Add(this.circularPictureBox1);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1200, 800);
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "Anasayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ANASAYFA";
+            this.Load += new System.EventHandler(this.Anasayfa_Load);
+            this.Click += new System.EventHandler(this.Anasayfa_Click);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cpKapat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,7 +108,6 @@
         #endregion
         private CircularPictureBox circularPictureBox1;
         private CircularPictureBox circularPictureBox2;
-        private CircularPictureBox cpKapat;
-        private Label label1;
+        private LinkLabel linkUyeOl;
     }
 }

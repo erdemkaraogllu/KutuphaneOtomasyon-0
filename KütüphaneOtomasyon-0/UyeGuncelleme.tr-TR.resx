@@ -58,7 +58,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZcAAAGgCAYAAABmGSoYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
         cQAAEnEB89x6jgAAJMNJREFUeF7t3deSXFmZhmEO+xY6YriAkS/5qlJJ5b2RYbgJ+gKAGNPNBQwnwMHM
@@ -2929,5 +2929,8 @@
         5x6fv/zYNFNbjNwUpmOw1zbvAKAxzKrKWqnI3CNhSHuxhNuuWmE4RVRTl6QVJaGZp4jbZjmzmPMNKAkW
         dJOErozANhxGct3KeA6sgNHSzUcO7uiAwojjm6gqSaX21ySxIKBxRMwDEXALQ6z/2Q==
 </value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>424, 522</value>
   </data>
 </root>

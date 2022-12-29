@@ -31,13 +31,6 @@ namespace KütüphaneOtomasyon_0
             Application.Exit();
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            Anasayfa form1 = new Anasayfa();
-            form1.Show();
-            this.Hide();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -73,7 +66,7 @@ namespace KütüphaneOtomasyon_0
 
                     if (blnfound == false)
                     {
-                        MessageBox.Show("Tekrar Deneyin.", "Hatalı Giriş", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Giriş Bilgileriniz Yanlış Lütfen Tekrar Deneyin.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
          dr.Close();
          baglanti.Close(); 
@@ -95,19 +88,12 @@ namespace KütüphaneOtomasyon_0
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void textPassword_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void linkUyeOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            UyeKayıt form4 = new UyeKayıt();
-            form4.Show();
-            this.Hide();
         }
 
         private void txtKullanıcıAdı_KeyPress(object sender, KeyPressEventArgs e)
@@ -119,6 +105,25 @@ namespace KütüphaneOtomasyon_0
         {
             SifreUnuttum form5 = new SifreUnuttum();
             form5.ShowDialog();
+        }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+            Anasayfa form1 = new Anasayfa();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void circularPictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.White;
+            circularPictureBox1.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void circularPictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            circularPictureBox1.BackColor = Color.Transparent;
+            circularPictureBox1.BorderStyle = BorderStyle.None;
         }
     }
 }

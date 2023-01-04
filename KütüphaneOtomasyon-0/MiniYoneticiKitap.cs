@@ -148,12 +148,14 @@ namespace KütüphaneOtomasyon_0
                         kaydet.ExecuteNonQuery();
                         baglanti.Close();
 
+                        txtKitapAd.Text = "";
+                        txtYazarAd.Text = "";
+                        txtBasim.Text = "";
+                        txtYayınEvi.Text = "";
+                        txtSayfa.Text = "";                    
+
                         MessageBox.Show("Kitap Eklendi");
-                        dgwTablo.DataSource = yenile();
-                        foreach (Control item in this.Controls)
-                        {
-                            if (item.GetType().ToString() == "System.Windows.Forms.TextBox") item.Text = "";
-                        }
+                        dgwTablo.DataSource = yenile();           
 
                     }
                     dr.Close();

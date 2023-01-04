@@ -191,7 +191,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void circularPictureBox3_MouseEnter(object sender, EventArgs e)

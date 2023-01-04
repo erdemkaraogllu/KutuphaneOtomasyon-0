@@ -130,75 +130,64 @@
             this.cbKitapTur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbKitapTur.FormattingEnabled = true;
             this.cbKitapTur.Items.AddRange(new object[] {
-            "DÜNYA KLASİKLERİ",
-            "AŞK",
-            "ROMAN",
-            "PSİKOLOJİ",
-            "GENÇLİK",
-            "DİN",
-            "TARİH",
-            "SİYASET-POLİTİKA",
-            "KİŞİSEL GELİŞİM",
-            "ÇOCUK",
-            "MACERA-AKSİYON",
-            "ŞİİR",
-            "POLİSİYE",
-            "FELSEFE-DÜŞÜNCE",
-            "FANTASTİK",
-            "KORKU-GERİLİM",
-            "EDEBİYAT",
-            "HİKAYE (ÖYKÜ)",
-            "BİLİM-KURGU",
-            "SOSYOLOJİ",
-            "BİYOGRAFİ",
-            "ARAŞTIRMA-İNCELEME",
-            "DENEME-İNCELEME",
-            "PARAPSİKOLOJİ-SPİRİTÜALİZM",
-            "EKONOMİ-EMEK-İŞ DÜNYASI",
-            "MANGA",
-            "EĞLENCE-MİZAH",
-            "TÜRK KLASİKLERİ",
-            "SAĞLIK-TIP",
-            "MASAL",
-            "İNSAN VE TOPLUM",
-            "ANI-MEKTUP-GÜNLÜK",
-            "BİLİM-TEKNOLOJİ-MÜHENDİSLİK",
-            "EĞİTİM",
-            "ÇİZGİ-ROMAN",
-            "TİYATRO",
-            "YERALTI EDEBİYATI",
-            "TASAVVUF-MEZHEPLER-TARİKATLAR",
-            "MİTOLOJİLER",
-            "HUKUK",
-            "ANTROPOLOJİ-ETNOLOJİ",
-            "SANAT",
-            "BİLGİSAYAR-İNTERNET",
-            "SPOR",
-            "GEZİ",
-            "KADIN-ERKEK",
-            "DERGİ",
-            "ANLATI",
-            "ELEŞTİRİ-KURAM",
-            "KADIN",
+            "",
             "AİLE (KADIN, ERKEK VE ÇOCUK)",
-            "EFSANELER-DESTANLAR",
-            "DİLBİLİMİ-ETİMOLOJİ",
-            "HOBİ",
-            "SİNEMA",
-            "YEMEK",
-            "ANTOLOJİ",
-            "DERS KİTAPLARI",
-            "SÖYLEŞİ-RÖPORTAJ",
-            "SENARYO-OYUN",
-            "MÜZİK",
-            "ÖZLÜ SÖZLER-DUVAR YAZILARI",
-            "HALK EDEBİYATI",
-            "İLETİŞİM-MEDYA",
+            "ANI-MEKTUP-GÜNLÜK",
+            "ARAŞTIRMA-İNCELEME",
+            "AŞK",
             "ASTROLOJİ-FAL-RÜYA TABİRLERİ",
+            "BİLGİSAYAR-İNTERNET",
+            "BİLİM-KURGU",
+            "BİLİM-TEKNOLOJİ-MÜHENDİSLİK",
+            "BİYOGRAFİ",
+            "ÇİZGİ-ROMAN",
+            "ÇOCUK",
+            "DENEME-İNCELEME",
+            "DERGİ",
+            "DERS KİTAPLARI",
+            "DİLBİLİMİ-ETİMOLOJİ",
+            "DİN",
+            "DÜNYA KLASİKLERİ",
+            "EDEBİYAT",
+            "EFSANELER-DESTANLAR",
+            "EĞİTİM",
+            "EĞLENCE-MİZAH",
             "EKOLOJİ",
+            "ELEŞTİRİ-KURAM",
+            "FANTASTİK",
+            "FELSEFE-DÜŞÜNCE",
+            "GENÇLİK",
+            "GEZİ",
+            "HALK EDEBİYATI",
+            "HİKAYE (ÖYKÜ)",
+            "HOBİ",
+            "HUKUK",
+            "İLETİŞİM-MEDYA",
+            "İNSAN VE TOPLUM",
+            "KİŞİSEL GELİŞİM",
+            "KORKU-GERİLİM",
+            "MACERA-AKSİYON",
+            "MANGA",
+            "MASAL",
+            "MİTOLOJİLER",
+            "MÜZİK",
+            "POLİSİYE",
+            "PSİKOLOJİ",
+            "ROMAN",
+            "SAĞLIK-TIP",
+            "SANAT",
+            "SENARYO-OYUN",
+            "ŞİİR",
+            "SİYASET-POLİTİKA",
+            "SOSYOLOJİ",
+            "SÖYLEŞİ-RÖPORTAJ",
             "SÖZLÜK-KILAVUZ KİTAP-ANSİKLOPEDİ",
-            "MODA",
-            "KÜLTÜR"});
+            "SPOR",
+            "TARİH",
+            "TASAVVUF-MEZHEPLER-TARİKATLAR",
+            "TİYATRO",
+            "TÜRK KLASİKLERİ",
+            "YEMEK"});
             this.cbKitapTur.Location = new System.Drawing.Point(228, 118);
             this.cbKitapTur.Name = "cbKitapTur";
             this.cbKitapTur.Size = new System.Drawing.Size(331, 28);
@@ -216,7 +205,6 @@
             // 
             // txtYayınEvi
             // 
-            this.txtYayınEvi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtYayınEvi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYayınEvi.Location = new System.Drawing.Point(228, 162);
             this.txtYayınEvi.Name = "txtYayınEvi";
@@ -225,7 +213,6 @@
             // 
             // txtYazarAd
             // 
-            this.txtYazarAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtYazarAd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYazarAd.Location = new System.Drawing.Point(228, 74);
             this.txtYazarAd.Name = "txtYazarAd";
@@ -234,7 +221,6 @@
             // 
             // txtKitapAd
             // 
-            this.txtKitapAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtKitapAd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtKitapAd.Location = new System.Drawing.Point(228, 30);
             this.txtKitapAd.Name = "txtKitapAd";

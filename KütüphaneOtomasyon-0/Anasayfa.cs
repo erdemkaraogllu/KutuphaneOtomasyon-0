@@ -90,10 +90,10 @@ namespace KütüphaneOtomasyon_0
 
         private void Anasayfa_Load(object sender, EventArgs e)
         {
-
+        
         }
 
-        private void Anasayfa_Click(object sender, EventArgs e)
+        private void Anasayfa_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

@@ -64,6 +64,10 @@ namespace KütüphaneOtomasyon_0
 
             if (sorgu == true)
             {
+                if (txtŞifre.TextLength <6 && txtŞifre.TextLength <=8) 
+                {
+
+                }
                 baglanti.Open();
                 NpgsqlCommand komut1 = new NpgsqlCommand("UPDATE uyebilgi SET uye_sifre = '" + txtŞifre.Text + "' WHERE tc = '" + txtTC.Text + "' ", baglanti);
                 komut1.ExecuteNonQuery();

@@ -32,7 +32,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void circularPictureBox1_MouseEnter_1(object sender, EventArgs e)
@@ -114,6 +114,11 @@ namespace KütüphaneOtomasyon_0
         {
             circularPictureBox3.BackColor= Color.Transparent;
             circularPictureBox3.BorderStyle = BorderStyle.None;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

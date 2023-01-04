@@ -44,11 +44,7 @@ namespace KütüphaneOtomasyon_0
 
                     if (sorgu == false)
                     {
-                        if (txtSifre.TextLength < 4)
-                        {
-                            MessageBox.Show("En Az 4 Karakterli Bir Şifre Ekleyiniz !");
-                        }
-                        else
+                        if ( 6 <= txtSifre.TextLength && txtSifre.TextLength <=8)
                         {
                             baglanti.Close();
                             baglanti.Open();
@@ -82,9 +78,12 @@ namespace KütüphaneOtomasyon_0
                             end
                             $$
                             language plpgsql
-                            */
-
-
+                            */                            
+                        }
+                        else
+                        {   
+                            baglanti.Close();
+                            MessageBox.Show("Lütfen En Az 6 En Fazla 8 Karakterli Bir Şifre Oluşturunuz !");
                         }
                     }
                 }

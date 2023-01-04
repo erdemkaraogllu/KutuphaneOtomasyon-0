@@ -96,8 +96,8 @@
             this.Name = "Anasayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ANASAYFA";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Anasayfa_FormClosed);
             this.Load += new System.EventHandler(this.Anasayfa_Load);
-            this.Click += new System.EventHandler(this.Anasayfa_Click);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.ResumeLayout(false);

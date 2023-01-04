@@ -66,7 +66,7 @@
     <value>Cambria, 10.2pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 103</value>
+    <value>78, 103</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
@@ -96,7 +96,7 @@
     <value>Cambria, 10.2pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 151</value>
+    <value>78, 151</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 20</value>
@@ -126,7 +126,7 @@
     <value>Cambria, 10.2pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 199</value>
+    <value>49, 199</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
@@ -156,7 +156,7 @@
     <value>Cambria, 10.2pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 247</value>
+    <value>28, 247</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -186,16 +186,16 @@
     <value>Cambria, 10.2pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 295</value>
+    <value>14, 295</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
+    <value>105, 20</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>SİFRE :</value>
+    <value>YENİ ŞİFRE :</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -213,7 +213,7 @@
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
   <data name="txtTC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 99</value>
+    <value>123, 99</value>
   </data>
   <data name="txtTC.MaxLength" type="System.Int32, mscorlib">
     <value>11</value>
@@ -240,7 +240,7 @@
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
   <data name="txtAd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 147</value>
+    <value>123, 147</value>
   </data>
   <data name="txtAd.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -267,7 +267,7 @@
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
   <data name="txtSoyad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 195</value>
+    <value>123, 195</value>
   </data>
   <data name="txtSoyad.MaxLength" type="System.Int32, mscorlib">
     <value>30</value>
@@ -294,7 +294,7 @@
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
   <data name="txtSifre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 291</value>
+    <value>123, 291</value>
   </data>
   <data name="txtSifre.MaxLength" type="System.Int32, mscorlib">
     <value>15</value>
@@ -321,7 +321,7 @@
     <value>Segoe UI, 10.2pt, style=Bold</value>
   </data>
   <data name="txtTelefon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 243</value>
+    <value>123, 243</value>
   </data>
   <data name="txtTelefon.Mask" xml:space="preserve">
     <value>(999) 000-0000</value>
@@ -348,7 +348,7 @@
     <value>Cambria, 9pt, style=Bold</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 333</value>
+    <value>123, 340</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 31</value>

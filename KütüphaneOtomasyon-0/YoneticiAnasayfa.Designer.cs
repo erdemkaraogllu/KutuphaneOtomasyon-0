@@ -35,6 +35,8 @@
             this.circularPictureBox3 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
@@ -105,6 +107,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(143, 729);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // circularPictureBox1
             // 
@@ -120,6 +123,30 @@
             this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter_1);
             this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(460, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 94);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ÖZGÜR";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Cambria", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(353, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(512, 94);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "KÜTÜPHANE";
+            // 
             // YoneticiAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -128,6 +155,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -146,6 +175,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +186,7 @@
         private CircularPictureBox circularPictureBox2;
         private CircularPictureBox circularPictureBox3;
         private CircularPictureBox circularPictureBox4;
+        private Label label1;
+        private Label label2;
     }
 }

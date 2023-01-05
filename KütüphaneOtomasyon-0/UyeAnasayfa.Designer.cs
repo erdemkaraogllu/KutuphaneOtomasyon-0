@@ -97,7 +97,6 @@
             // 
             // txtAra
             // 
-            this.txtAra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAra.Location = new System.Drawing.Point(442, 36);
             this.txtAra.Name = "txtAra";

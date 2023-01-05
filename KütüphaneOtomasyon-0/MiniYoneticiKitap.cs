@@ -179,5 +179,10 @@ namespace KütüphaneOtomasyon_0
             circularPictureBox2.BackColor = Color.Transparent;
             circularPictureBox2.BorderStyle = BorderStyle.None;
         }
+
+        private void dgwTablo_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

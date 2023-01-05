@@ -22,32 +22,39 @@ namespace KütüphaneOtomasyon_0
 
         private void button1_Click(object sender, EventArgs e)
 
-        {
-          bool blnfound = false;
+        { if (txtKullanıcıAdı.Text == "admin" && txtPassword.Text == "00000000")
+            {
+                Admin form1 = new Admin();
+                form1.Show();
+                this.Close();
+            }
+            else
+            {
+                bool blnfound = false;
 
-            baglanti.Open();
-            NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text + "' and password = '" + txtPassword.Text + "'", baglanti);
-            NpgsqlDataReader dr = komut1.ExecuteReader();
+                baglanti.Open();
+                NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text.ToUpper() + "' and password = '" + txtPassword.Text + "'", baglanti);
+                NpgsqlDataReader dr = komut1.ExecuteReader();
 
-            if (dr.Read())
-             {
-                  blnfound = true;
+                if (dr.Read())
+                {
+                    blnfound = true;
 
-                  YoneticiAnasayfa form6 = new YoneticiAnasayfa();
-                  form6.Show();
-                  this.Hide();
+                    YoneticiAnasayfa form6 = new YoneticiAnasayfa();
+                    form6.Show();
+                    this.Hide();
 
-                  MessageBox.Show("Hoş Geldiniz. !!");
+                    MessageBox.Show("Hoş Geldiniz. !!");
 
-             }
+                }
 
-            if (blnfound == false)
-             {
-                MessageBox.Show(" Giriş Bİlgileriniz Hatalı Tekrar Deneyin.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-             }
-        dr.Close();
-        baglanti.Close();
-              
+                if (blnfound == false)
+                {
+                    MessageBox.Show(" Giriş Bİlgileriniz Hatalı Tekrar Deneyin.", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                dr.Close();
+                baglanti.Close();
+            }
         }
 
         private void YoneticiGiris_Load(object sender, EventArgs e)
@@ -71,7 +78,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -356,6 +356,7 @@
             this.dgwTablo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgwTablo.Size = new System.Drawing.Size(784, 211);
             this.dgwTablo.TabIndex = 0;
+            this.dgwTablo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwTablo_CellContentClick_1);
             this.dgwTablo.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgwTablo_RowHeaderMouseDoubleClick_1);
             // 
             // Column4

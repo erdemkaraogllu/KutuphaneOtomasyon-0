@@ -117,20 +117,35 @@ namespace KütüphaneOtomasyon_0
         {
             try
             {
-                for (int i = 0; i < dgvUye.SelectedRows.Count; i++)
+                string tc = dgvUye.CurrentRow.Cells[0].Value.ToString();
+                baglanti.Open();
+                NpgsqlCommand sorgu = new NpgsqlCommand("SELECT * FROM emanet_kitap WHERE tc = '" + tc + "'", baglanti);
+                NpgsqlDataReader dr = sorgu.ExecuteReader();
+
+                if (dr.Read())
                 {
-                    baglanti.Open();
-                    NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM uyebilgi WHERE tc = '" + dgvUye.SelectedRows[i].Cells[0].Value + "'", baglanti);
-                    komut.ExecuteNonQuery();
+                    MessageBox.Show("Üyeyi Silmeden Önce Üyenin Emanet Kitap İşlemlerini Tamamlayınız !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dr.Close();
                     baglanti.Close();
-
-                    MessageBox.Show("Üye Silindi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dgvUye.DataSource = yenileUye();
-
                 }
-                //MessageBox.Show("Silmek İstediğiniz Üyeyi Seçiniz !","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                else
+                {
+                    dr.Close();
+                    baglanti.Close();
+                    for (int i = 0; i < dgvUye.SelectedRows.Count; i++)
+                    {
+                        baglanti.Open();
+                        NpgsqlCommand komut = new NpgsqlCommand("DELETE FROM uyebilgi WHERE tc = '" + dgvUye.SelectedRows[i].Cells[0].Value + "'", baglanti);
+                        komut.ExecuteNonQuery();
+                        baglanti.Close();
 
+                        MessageBox.Show("Üye Silindi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        dgvUye.DataSource = yenileUye();
+
+                    }
+                    //MessageBox.Show("Silmek İstediğiniz Üyeyi Seçiniz !","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {

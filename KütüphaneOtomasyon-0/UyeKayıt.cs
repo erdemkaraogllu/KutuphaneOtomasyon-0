@@ -50,8 +50,8 @@ namespace KütüphaneOtomasyon_0
                             baglanti.Open();
                             NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
                             komut1.Parameters.AddWithValue("_tc", txtTC.Text);
-                            komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text);
-                            komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text);
+                            komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text.ToUpper());
+                            komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text.ToUpper());
                             komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
                             komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
                             komut1.ExecuteNonQuery();

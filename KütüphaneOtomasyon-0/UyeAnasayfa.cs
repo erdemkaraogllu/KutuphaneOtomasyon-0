@@ -36,7 +36,7 @@ namespace KütüphaneOtomasyon_0
             {
                 baglanti.Open();
                // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%')";
-                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%'";
+                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap WHERE kitap_ad like '" + txtAra.Text.ToUpper() + "%'";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "kutuphane");

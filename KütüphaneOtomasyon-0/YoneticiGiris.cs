@@ -33,7 +33,7 @@ namespace KütüphaneOtomasyon_0
                 bool blnfound = false;
 
                 baglanti.Open();
-                NpgsqlCommand komut1 = new NpgsqlCommand("Select * from userr where username= '" + txtKullanıcıAdı.Text.ToUpper() + "' and password = '" + txtPassword.Text + "'", baglanti);
+                NpgsqlCommand komut1 = new NpgsqlCommand("SELECT * FROM userr WHERE username= '" + txtKullanıcıAdı.Text.ToUpper() + "' and password = '" + txtPassword.Text + "'", baglanti);
                 NpgsqlDataReader dr = komut1.ExecuteReader();
 
                 if (dr.Read())

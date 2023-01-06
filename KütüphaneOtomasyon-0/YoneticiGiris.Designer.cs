@@ -53,6 +53,7 @@
             // txtKullanıcıAdı
             // 
             this.txtKullanıcıAdı.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtKullanıcıAdı.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtKullanıcıAdı.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtKullanıcıAdı.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtKullanıcıAdı.Location = new System.Drawing.Point(255, 146);
@@ -75,6 +76,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(310, 233);
@@ -88,6 +90,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtPassword.Location = new System.Drawing.Point(255, 191);
             this.txtPassword.Mask = "00000000";
             this.txtPassword.Name = "txtPassword";
@@ -98,6 +101,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(12, 336);
             this.circularPictureBox1.Name = "circularPictureBox1";

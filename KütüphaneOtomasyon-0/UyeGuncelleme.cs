@@ -25,9 +25,7 @@ namespace KütüphaneOtomasyon_0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            UyeAnasayfa form1 = new UyeAnasayfa();
-            form1.Show();
-            this.Close();
+            ActiveForm.Close();
         }
 
         private void UyeGuncelleme_Load(object sender, EventArgs e)

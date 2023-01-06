@@ -103,6 +103,7 @@
             // 
             // circularPictureBox2
             // 
+            this.circularPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
             this.circularPictureBox2.Location = new System.Drawing.Point(655, 195);
             this.circularPictureBox2.Name = "circularPictureBox2";
@@ -116,6 +117,7 @@
             // 
             // txtSayfa
             // 
+            this.txtSayfa.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtSayfa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSayfa.Location = new System.Drawing.Point(228, 250);
             this.txtSayfa.MaxLength = 4;
@@ -126,6 +128,7 @@
             // 
             // cbKitapTur
             // 
+            this.cbKitapTur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbKitapTur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKitapTur.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbKitapTur.FormattingEnabled = true;
@@ -195,6 +198,7 @@
             // 
             // txtBasim
             // 
+            this.txtBasim.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtBasim.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtBasim.Location = new System.Drawing.Point(227, 206);
             this.txtBasim.Mask = "0000";
@@ -205,6 +209,7 @@
             // 
             // txtYayınEvi
             // 
+            this.txtYayınEvi.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtYayınEvi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYayınEvi.Location = new System.Drawing.Point(228, 162);
             this.txtYayınEvi.Name = "txtYayınEvi";
@@ -213,6 +218,7 @@
             // 
             // txtYazarAd
             // 
+            this.txtYazarAd.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtYazarAd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtYazarAd.Location = new System.Drawing.Point(228, 74);
             this.txtYazarAd.Name = "txtYazarAd";
@@ -221,6 +227,7 @@
             // 
             // txtKitapAd
             // 
+            this.txtKitapAd.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtKitapAd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtKitapAd.Location = new System.Drawing.Point(228, 30);
             this.txtKitapAd.Name = "txtKitapAd";
@@ -304,6 +311,7 @@
             // 
             this.dgwTablo.AllowUserToAddRows = false;
             this.dgwTablo.AllowUserToDeleteRows = false;
+            this.dgwTablo.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dgwTablo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -326,6 +334,7 @@
             this.Column8,
             this.Column9,
             this.Column10});
+            this.dgwTablo.Cursor = System.Windows.Forms.Cursors.AppStarting;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -495,6 +504,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(820, 12);
             this.circularPictureBox1.Name = "circularPictureBox1";

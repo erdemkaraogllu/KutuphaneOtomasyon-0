@@ -85,6 +85,7 @@
             // 
             this.txtTC.BackColor = System.Drawing.Color.White;
             this.txtTC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTC.Cursor = System.Windows.Forms.Cursors.SizeNS;
             resources.ApplyResources(this.txtTC, "txtTC");
             this.txtTC.Name = "txtTC";
             this.txtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTC_KeyPress);
@@ -93,7 +94,7 @@
             // 
             this.txtAd.BackColor = System.Drawing.Color.White;
             this.txtAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAd.Cursor = System.Windows.Forms.Cursors.SizeNS;
             resources.ApplyResources(this.txtAd, "txtAd");
             this.txtAd.Name = "txtAd";
             // 
@@ -101,7 +102,7 @@
             // 
             this.txtSoyad.BackColor = System.Drawing.Color.White;
             this.txtSoyad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSoyad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSoyad.Cursor = System.Windows.Forms.Cursors.SizeNS;
             resources.ApplyResources(this.txtSoyad, "txtSoyad");
             this.txtSoyad.Name = "txtSoyad";
             // 
@@ -109,6 +110,7 @@
             // 
             this.txtSifre.BackColor = System.Drawing.Color.White;
             this.txtSifre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSifre.Cursor = System.Windows.Forms.Cursors.SizeNS;
             resources.ApplyResources(this.txtSifre, "txtSifre");
             this.txtSifre.Name = "txtSifre";
             // 
@@ -116,6 +118,7 @@
             // 
             this.txtTelefon.BackColor = System.Drawing.Color.White;
             this.txtTelefon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefon.Cursor = System.Windows.Forms.Cursors.SizeNS;
             resources.ApplyResources(this.txtTelefon, "txtTelefon");
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
@@ -123,6 +126,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.button1, "button1");
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Name = "button1";
@@ -133,6 +137,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button2, "button2");
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;

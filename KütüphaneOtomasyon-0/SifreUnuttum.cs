@@ -23,12 +23,7 @@ namespace KütüphaneOtomasyon_0
         private void SifreUnuttum_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void circularPictureBox1_Click(object sender, EventArgs e)
-        {   
-            
-        }
+        }       
 
         private void circularPictureBox3_Click(object sender, EventArgs e)
         {
@@ -51,7 +46,7 @@ namespace KütüphaneOtomasyon_0
         {
             bool sorgu = false;
             baglanti.Open();
-            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '" + txtTC.Text + "' and uye_telefon = '" + txtTelefon.Text + "'", baglanti);
+            NpgsqlCommand komut = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '" + txtTC.Text + "' AND uye_telefon = '" + txtTelefon.Text + "'", baglanti);
             NpgsqlDataReader dr = komut.ExecuteReader();
 
 

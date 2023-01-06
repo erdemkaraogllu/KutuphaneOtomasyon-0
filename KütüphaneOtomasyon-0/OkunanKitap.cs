@@ -23,8 +23,7 @@ namespace KütüphaneOtomasyon_0
         private void OkunanKitap_Load(object sender, EventArgs e)
         {
             try
-            {
-               // string deger1 = UyeGiris.deger;
+            {              
                 string sorgu = "SELECT kitap_ad FROM okunan_kitap WHERE tc like '" + deger1 + "%'";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();

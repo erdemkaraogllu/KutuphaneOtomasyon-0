@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UyeGiris));
-            this.txtKullanıcıAdı = new System.Windows.Forms.TextBox();
+            this.txtTC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,18 +39,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtKullanıcıAdı
+            // txtTC
             // 
-            this.txtKullanıcıAdı.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(106)))), ((int)(((byte)(111)))));
-            this.txtKullanıcıAdı.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtKullanıcıAdı.ForeColor = System.Drawing.Color.White;
-            this.txtKullanıcıAdı.Location = new System.Drawing.Point(142, 84);
-            this.txtKullanıcıAdı.MaxLength = 11;
-            this.txtKullanıcıAdı.Name = "txtKullanıcıAdı";
-            this.txtKullanıcıAdı.Size = new System.Drawing.Size(161, 27);
-            this.txtKullanıcıAdı.TabIndex = 0;
-            this.txtKullanıcıAdı.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtKullanıcıAdı.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKullanıcıAdı_KeyPress);
+            this.txtTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(106)))), ((int)(((byte)(111)))));
+            this.txtTC.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.txtTC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtTC.ForeColor = System.Drawing.Color.White;
+            this.txtTC.Location = new System.Drawing.Point(142, 84);
+            this.txtTC.MaxLength = 11;
+            this.txtTC.Name = "txtTC";
+            this.txtTC.Size = new System.Drawing.Size(161, 27);
+            this.txtTC.TabIndex = 0;
+            this.txtTC.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKullanıcıAdı_KeyPress);
             // 
             // label2
             // 
@@ -80,6 +81,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(253)))), ((int)(((byte)(216)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(209, 194);
@@ -93,6 +95,7 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(106)))), ((int)(((byte)(111)))));
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(142, 129);
@@ -107,6 +110,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("Calibri", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(50, 194);
@@ -120,6 +124,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(12, 337);
             this.circularPictureBox1.Name = "circularPictureBox1";
@@ -144,7 +149,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtKullanıcıAdı);
+            this.Controls.Add(this.txtTC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -163,7 +168,7 @@
         }
 
         #endregion
-        private TextBox txtKullanıcıAdı;
+        private TextBox txtTC;
         private Label label2;
         private Label label1;
         private Button button1;

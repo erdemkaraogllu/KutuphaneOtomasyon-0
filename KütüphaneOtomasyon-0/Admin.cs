@@ -56,6 +56,8 @@ namespace KütüphaneOtomasyon_0
                         komut.ExecuteNonQuery();
                         baglanti.Close();
 
+                        dgvYönetici.DataSource = Yenile();
+
                         MessageBox.Show("Yeni Yönetici Eklendi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

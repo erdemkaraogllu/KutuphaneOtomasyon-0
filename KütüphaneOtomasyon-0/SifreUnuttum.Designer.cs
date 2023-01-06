@@ -112,6 +112,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Location = new System.Drawing.Point(327, 127);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(18, 17);
@@ -122,6 +123,7 @@
             // circularPictureBox3
             // 
             this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
             this.circularPictureBox3.Location = new System.Drawing.Point(12, 177);
             this.circularPictureBox3.Name = "circularPictureBox3";
@@ -135,6 +137,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(193, 177);
             this.button1.Name = "button1";
@@ -161,6 +164,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTC);
+            this.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(420, 291);
             this.MinimumSize = new System.Drawing.Size(420, 291);

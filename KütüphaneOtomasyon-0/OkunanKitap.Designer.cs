@@ -67,6 +67,7 @@
             this.dgvOkunanKitap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOkunanKitap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
+            this.dgvOkunanKitap.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -118,6 +119,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(786, 12);
             this.circularPictureBox1.Name = "circularPictureBox1";

@@ -23,19 +23,12 @@ namespace KütüphaneOtomasyon_0
             this.IsMdiContainer = true;
         }
             NpgsqlConnection baglanti = new NpgsqlConnection("Server=localhost; Port=5432; User Id =postgres; Password=12345; Database=Kutuphane_Otomasyonu;");
-        
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+             
         private void button3_Click(object sender, EventArgs e)
         {
             try
             {
-                baglanti.Open();
-               // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(SELECT * FROM kitap WHERE kitap_ad like '" + txtAra.Text + "%')";
+                baglanti.Open();               
                 string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap WHERE kitap_ad like '" + txtAra.Text.ToUpper() + "%'";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu, baglanti);
                 DataSet ds = new DataSet();
@@ -67,8 +60,7 @@ namespace KütüphaneOtomasyon_0
             try
             {
                 txtAra.Clear();
-                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap";
-               // string sorgu = "select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)";
+                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -170,7 +162,7 @@ namespace KütüphaneOtomasyon_0
         DataTable yenileKitap()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select kitap_ad, yazar, tur, yayin_evi, basim, sayfa from kitap where not kitap_ad in(select kitap_ad from  emanet_kitap)", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap", baglanti); //WHERE not kitap_ad in(SELECT kitap_ad FROM  emanet_kitap
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             baglanti.Close();
@@ -180,7 +172,7 @@ namespace KütüphaneOtomasyon_0
         {
             string deger1 = UyeGiris.deger;
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select kitap_ad, age(teslim_date,current_date) from emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, AGE(teslim_date,current_date) FROM emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
             DataTable tablo1 = new DataTable();
             da.Fill(tablo1);
             baglanti.Close();
@@ -191,7 +183,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void circularPictureBox3_MouseEnter(object sender, EventArgs e)

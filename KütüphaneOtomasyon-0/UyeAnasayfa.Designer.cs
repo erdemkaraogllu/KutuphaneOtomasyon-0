@@ -73,6 +73,7 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(217)))), ((int)(((byte)(234)))));
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
@@ -97,16 +98,18 @@
             // 
             // txtAra
             // 
+            this.txtAra.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAra.Location = new System.Drawing.Point(442, 36);
+            this.txtAra.Location = new System.Drawing.Point(437, 38);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(403, 30);
             this.txtAra.TabIndex = 7;
             // 
             // btnAra
             // 
+            this.btnAra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAra.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAra.Location = new System.Drawing.Point(851, 36);
+            this.btnAra.Location = new System.Drawing.Point(846, 38);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(99, 29);
             this.btnAra.TabIndex = 8;
@@ -116,9 +119,10 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(697, 678);
+            this.button5.Location = new System.Drawing.Point(684, 666);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 56);
             this.button5.TabIndex = 12;
@@ -128,8 +132,9 @@
             // 
             // btnListele
             // 
+            this.btnListele.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListele.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnListele.Location = new System.Drawing.Point(956, 36);
+            this.btnListele.Location = new System.Drawing.Point(951, 38);
             this.btnListele.Name = "btnListele";
             this.btnListele.Size = new System.Drawing.Size(99, 29);
             this.btnListele.TabIndex = 14;
@@ -141,6 +146,7 @@
             // 
             this.dgvDataOdunc.AllowUserToAddRows = false;
             this.dgvDataOdunc.AllowUserToDeleteRows = false;
+            this.dgvDataOdunc.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dgvDataOdunc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -196,6 +202,7 @@
             // 
             this.dgvData.AllowUserToAddRows = false;
             this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.AllowUserToOrderColumns = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -231,7 +238,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvData.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvData.Location = new System.Drawing.Point(350, 116);
+            this.dgvData.Location = new System.Drawing.Point(337, 116);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -359,8 +366,9 @@
             // circularPictureBox3
             // 
             this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
-            this.circularPictureBox3.Location = new System.Drawing.Point(1128, 12);
+            this.circularPictureBox3.Location = new System.Drawing.Point(1110, 681);
             this.circularPictureBox3.Name = "circularPictureBox3";
             this.circularPictureBox3.Size = new System.Drawing.Size(60, 60);
             this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -373,6 +381,7 @@
             // circularPictureBox2
             // 
             this.circularPictureBox2.BackColor = System.Drawing.Color.White;
+            this.circularPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
             this.circularPictureBox2.Location = new System.Drawing.Point(118, 411);
             this.circularPictureBox2.Name = "circularPictureBox2";
@@ -391,7 +400,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1182, 753);
             this.ControlBox = false;
             this.Controls.Add(this.circularPictureBox2);
             this.Controls.Add(this.circularPictureBox3);
@@ -404,7 +413,7 @@
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximumSize = new System.Drawing.Size(1200, 800);
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "UyeAnasayfa";

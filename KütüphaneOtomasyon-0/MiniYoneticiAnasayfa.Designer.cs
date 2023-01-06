@@ -150,6 +150,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(838, 12);
             this.circularPictureBox1.Name = "circularPictureBox1";

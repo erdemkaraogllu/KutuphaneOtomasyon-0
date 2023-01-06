@@ -32,7 +32,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void circularPictureBox1_MouseEnter_1(object sender, EventArgs e)

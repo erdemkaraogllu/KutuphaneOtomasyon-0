@@ -53,6 +53,7 @@
             // 
             // txtAd
             // 
+            this.txtAd.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtAd.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAd.Location = new System.Drawing.Point(162, 46);
             this.txtAd.Name = "txtAd";
@@ -61,6 +62,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(207, 138);
             this.button1.Name = "button1";
@@ -92,6 +94,7 @@
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.Location = new System.Drawing.Point(385, 244);
             this.button2.Name = "button2";
@@ -103,11 +106,12 @@
             // 
             // txtSifre
             // 
+            this.txtSifre.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtSifre.Location = new System.Drawing.Point(162, 91);
             this.txtSifre.Mask = "00000000";
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(191, 27);
-            this.txtSifre.TabIndex = 6;
+            this.txtSifre.TabIndex = 1;
             // 
             // panel1
             // 
@@ -143,6 +147,7 @@
             this.Column3,
             this.Column1,
             this.Column2});
+            this.dgvYönetici.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);

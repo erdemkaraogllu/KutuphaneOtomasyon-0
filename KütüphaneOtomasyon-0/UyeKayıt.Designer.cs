@@ -50,7 +50,6 @@
             // 
             this.txtAd.BackColor = System.Drawing.Color.White;
             this.txtAd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAd.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtAd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtAd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -64,7 +63,6 @@
             // 
             this.txtSoyad.BackColor = System.Drawing.Color.White;
             this.txtSoyad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSoyad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSoyad.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtSoyad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSoyad.Location = new System.Drawing.Point(106, 185);
@@ -136,6 +134,7 @@
             // btnUyeKayıt
             // 
             this.btnUyeKayıt.BackColor = System.Drawing.Color.Transparent;
+            this.btnUyeKayıt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUyeKayıt.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUyeKayıt.ForeColor = System.Drawing.Color.Black;
             this.btnUyeKayıt.Location = new System.Drawing.Point(151, 340);
@@ -164,7 +163,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkBox1.Location = new System.Drawing.Point(283, 285);
             this.checkBox1.Name = "checkBox1";
@@ -180,7 +179,7 @@
             this.txtSifre.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtSifre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSifre.Location = new System.Drawing.Point(106, 279);
-            this.txtSifre.MaxLength = 15;
+            this.txtSifre.MaxLength = 8;
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(171, 27);
             this.txtSifre.TabIndex = 4;
@@ -206,6 +205,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(295, 12);
             this.button1.Name = "button1";

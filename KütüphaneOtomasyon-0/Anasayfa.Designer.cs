@@ -39,6 +39,7 @@
             // circularPictureBox1
             // 
             this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
             this.circularPictureBox1.Location = new System.Drawing.Point(637, 368);
             this.circularPictureBox1.Name = "circularPictureBox1";
@@ -53,6 +54,7 @@
             // circularPictureBox2
             // 
             this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
             this.circularPictureBox2.Location = new System.Drawing.Point(396, 368);
             this.circularPictureBox2.Name = "circularPictureBox2";
@@ -68,6 +70,7 @@
             // 
             this.linkUyeOl.AutoSize = true;
             this.linkUyeOl.BackColor = System.Drawing.Color.Transparent;
+            this.linkUyeOl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkUyeOl.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkUyeOl.LinkColor = System.Drawing.Color.Khaki;
             this.linkUyeOl.Location = new System.Drawing.Point(576, 584);

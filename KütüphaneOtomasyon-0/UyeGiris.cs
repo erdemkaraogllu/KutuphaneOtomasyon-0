@@ -37,18 +37,18 @@ namespace KütüphaneOtomasyon_0
              bool blnfound = false;
 
              baglanti.Open();
-             NpgsqlCommand komut1 = new NpgsqlCommand("Select * from uyebilgi where tc = '" + txtKullanıcıAdı.Text + "' and uye_sifre = '" + txtPassword.Text + "'", baglanti);
+             NpgsqlCommand komut1 = new NpgsqlCommand("SELECT * FROM uyebilgi WHERE tc = '" + txtTC.Text + "' and uye_sifre = '" + txtPassword.Text + "'", baglanti);
              NpgsqlDataReader dr = komut1.ExecuteReader();
                 if (dr.Read())
                 {
-                    deger = txtKullanıcıAdı.Text;
+                    deger = txtTC.Text;
                     blnfound = true;
                  
                     baglanti.Close();
                  
 
                     baglanti.Open();
-                    NpgsqlCommand komut2 = new NpgsqlCommand("SELECT uye_ad, uye_soyad FROM uyebilgi WHERE tc = '" + txtKullanıcıAdı.Text + "'",baglanti);
+                    NpgsqlCommand komut2 = new NpgsqlCommand("SELECT uye_ad, uye_soyad FROM uyebilgi WHERE tc = '" + txtTC.Text + "'",baglanti);
                     NpgsqlDataReader dr2 = komut2.ExecuteReader();
 
                     if (dr2.Read())
@@ -70,10 +70,6 @@ namespace KütüphaneOtomasyon_0
                     }
          dr.Close();
          baglanti.Close(); 
-        //bu satırı kaldırmayı unutma!
-        /* UyeAnasayfa form5 = new UyeAnasayfa();
-         form5.Show();
-         this.Hide(); */
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -111,7 +107,7 @@ namespace KütüphaneOtomasyon_0
         {
             Anasayfa form1 = new Anasayfa();
             form1.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void circularPictureBox1_MouseEnter(object sender, EventArgs e)

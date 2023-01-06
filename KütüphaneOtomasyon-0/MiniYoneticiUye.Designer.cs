@@ -41,12 +41,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniYoneticiUye));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniYoneticiUye));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvUye = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,11 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvKitap = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.txtEmanetAra = new System.Windows.Forms.TextBox();
             this.circularPictureBox1 = new KütüphaneOtomasyon_0.CircularPictureBox();
@@ -62,11 +67,6 @@
             this.circularPictureBox3 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.circularPictureBox4 = new KütüphaneOtomasyon_0.CircularPictureBox();
             this.circularPictureBox5 = new KütüphaneOtomasyon_0.CircularPictureBox();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUye)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,6 +95,7 @@
             // 
             this.dgvUye.AllowUserToAddRows = false;
             this.dgvUye.AllowUserToDeleteRows = false;
+            this.dgvUye.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -207,6 +208,7 @@
             // 
             this.dgvKitap.AllowUserToAddRows = false;
             this.dgvKitap.AllowUserToDeleteRows = false;
+            this.dgvKitap.AllowUserToOrderColumns = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvKitap.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKitap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -226,6 +228,7 @@
             this.Column7,
             this.Column8,
             this.Column9});
+            this.dgvKitap.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -260,95 +263,6 @@
             this.dgvKitap.Size = new System.Drawing.Size(744, 171);
             this.dgvKitap.TabIndex = 0;
             this.dgvKitap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKitap_CellContentClick);
-            // 
-            // txtAra
-            // 
-            this.txtAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAra.Location = new System.Drawing.Point(295, 259);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(273, 30);
-            this.txtAra.TabIndex = 4;
-            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
-            this.txtAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAra_KeyPress);
-            // 
-            // txtEmanetAra
-            // 
-            this.txtEmanetAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtEmanetAra.Location = new System.Drawing.Point(295, 573);
-            this.txtEmanetAra.Name = "txtEmanetAra";
-            this.txtEmanetAra.Size = new System.Drawing.Size(273, 30);
-            this.txtEmanetAra.TabIndex = 7;
-            this.txtEmanetAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmanetAra_KeyPress);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
-            this.circularPictureBox1.Location = new System.Drawing.Point(820, 12);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 9;
-            this.circularPictureBox1.TabStop = false;
-            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
-            this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter);
-            this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave);
-            // 
-            // circularPictureBox2
-            // 
-            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
-            this.circularPictureBox2.Location = new System.Drawing.Point(409, 295);
-            this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(75, 75);
-            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox2.TabIndex = 10;
-            this.circularPictureBox2.TabStop = false;
-            this.circularPictureBox2.Click += new System.EventHandler(this.circularPictureBox2_Click);
-            this.circularPictureBox2.MouseEnter += new System.EventHandler(this.circularPictureBox2_MouseEnter);
-            this.circularPictureBox2.MouseLeave += new System.EventHandler(this.circularPictureBox2_MouseLeave);
-            // 
-            // circularPictureBox3
-            // 
-            this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
-            this.circularPictureBox3.Location = new System.Drawing.Point(572, 255);
-            this.circularPictureBox3.Name = "circularPictureBox3";
-            this.circularPictureBox3.Size = new System.Drawing.Size(34, 34);
-            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox3.TabIndex = 11;
-            this.circularPictureBox3.TabStop = false;
-            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
-            this.circularPictureBox3.MouseEnter += new System.EventHandler(this.circularPictureBox3_MouseEnter);
-            this.circularPictureBox3.MouseLeave += new System.EventHandler(this.circularPictureBox3_MouseLeave);
-            // 
-            // circularPictureBox4
-            // 
-            this.circularPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox4.Image")));
-            this.circularPictureBox4.Location = new System.Drawing.Point(574, 569);
-            this.circularPictureBox4.Name = "circularPictureBox4";
-            this.circularPictureBox4.Size = new System.Drawing.Size(34, 34);
-            this.circularPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox4.TabIndex = 12;
-            this.circularPictureBox4.TabStop = false;
-            this.circularPictureBox4.Click += new System.EventHandler(this.circularPictureBox4_Click);
-            this.circularPictureBox4.MouseEnter += new System.EventHandler(this.circularPictureBox4_MouseEnter);
-            this.circularPictureBox4.MouseLeave += new System.EventHandler(this.circularPictureBox4_MouseLeave);
-            // 
-            // circularPictureBox5
-            // 
-            this.circularPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox5.Image")));
-            this.circularPictureBox5.Location = new System.Drawing.Point(409, 613);
-            this.circularPictureBox5.Name = "circularPictureBox5";
-            this.circularPictureBox5.Size = new System.Drawing.Size(75, 75);
-            this.circularPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox5.TabIndex = 13;
-            this.circularPictureBox5.TabStop = false;
-            this.circularPictureBox5.Click += new System.EventHandler(this.circularPictureBox5_Click);
-            this.circularPictureBox5.MouseEnter += new System.EventHandler(this.circularPictureBox5_MouseEnter);
-            this.circularPictureBox5.MouseLeave += new System.EventHandler(this.circularPictureBox5_MouseLeave);
             // 
             // Column5
             // 
@@ -424,6 +338,102 @@
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
+            // 
+            // txtAra
+            // 
+            this.txtAra.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.txtAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtAra.Location = new System.Drawing.Point(295, 259);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(273, 30);
+            this.txtAra.TabIndex = 4;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            this.txtAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAra_KeyPress);
+            // 
+            // txtEmanetAra
+            // 
+            this.txtEmanetAra.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.txtEmanetAra.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtEmanetAra.Location = new System.Drawing.Point(295, 573);
+            this.txtEmanetAra.Name = "txtEmanetAra";
+            this.txtEmanetAra.Size = new System.Drawing.Size(273, 30);
+            this.txtEmanetAra.TabIndex = 7;
+            this.txtEmanetAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmanetAra_KeyPress);
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(820, 12);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 9;
+            this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
+            this.circularPictureBox1.MouseEnter += new System.EventHandler(this.circularPictureBox1_MouseEnter);
+            this.circularPictureBox1.MouseLeave += new System.EventHandler(this.circularPictureBox1_MouseLeave);
+            // 
+            // circularPictureBox2
+            // 
+            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
+            this.circularPictureBox2.Location = new System.Drawing.Point(409, 295);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(75, 75);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox2.TabIndex = 10;
+            this.circularPictureBox2.TabStop = false;
+            this.circularPictureBox2.Click += new System.EventHandler(this.circularPictureBox2_Click);
+            this.circularPictureBox2.MouseEnter += new System.EventHandler(this.circularPictureBox2_MouseEnter);
+            this.circularPictureBox2.MouseLeave += new System.EventHandler(this.circularPictureBox2_MouseLeave);
+            // 
+            // circularPictureBox3
+            // 
+            this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
+            this.circularPictureBox3.Location = new System.Drawing.Point(572, 255);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(34, 34);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox3.TabIndex = 11;
+            this.circularPictureBox3.TabStop = false;
+            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
+            this.circularPictureBox3.MouseEnter += new System.EventHandler(this.circularPictureBox3_MouseEnter);
+            this.circularPictureBox3.MouseLeave += new System.EventHandler(this.circularPictureBox3_MouseLeave);
+            // 
+            // circularPictureBox4
+            // 
+            this.circularPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circularPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox4.Image")));
+            this.circularPictureBox4.Location = new System.Drawing.Point(574, 569);
+            this.circularPictureBox4.Name = "circularPictureBox4";
+            this.circularPictureBox4.Size = new System.Drawing.Size(34, 34);
+            this.circularPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox4.TabIndex = 12;
+            this.circularPictureBox4.TabStop = false;
+            this.circularPictureBox4.Click += new System.EventHandler(this.circularPictureBox4_Click);
+            this.circularPictureBox4.MouseEnter += new System.EventHandler(this.circularPictureBox4_MouseEnter);
+            this.circularPictureBox4.MouseLeave += new System.EventHandler(this.circularPictureBox4_MouseLeave);
+            // 
+            // circularPictureBox5
+            // 
+            this.circularPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.circularPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox5.Image")));
+            this.circularPictureBox5.Location = new System.Drawing.Point(409, 613);
+            this.circularPictureBox5.Name = "circularPictureBox5";
+            this.circularPictureBox5.Size = new System.Drawing.Size(75, 75);
+            this.circularPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox5.TabIndex = 13;
+            this.circularPictureBox5.TabStop = false;
+            this.circularPictureBox5.Click += new System.EventHandler(this.circularPictureBox5_Click);
+            this.circularPictureBox5.MouseEnter += new System.EventHandler(this.circularPictureBox5_MouseEnter);
+            this.circularPictureBox5.MouseLeave += new System.EventHandler(this.circularPictureBox5_MouseLeave);
             // 
             // MiniYoneticiUye
             // 

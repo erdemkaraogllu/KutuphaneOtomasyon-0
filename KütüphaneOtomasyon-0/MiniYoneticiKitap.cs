@@ -63,7 +63,7 @@ namespace KütüphaneOtomasyon_0
         DataTable yenile()
         {
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_id,kitap_ad,yazar,tur,yayin_evi,basim,sayfa FROM kitap", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_id, kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap", baglanti);
             DataTable tablo = new DataTable();
             da.Fill(tablo);
             baglanti.Close();
@@ -106,7 +106,7 @@ namespace KütüphaneOtomasyon_0
                 else
                 {
                     baglanti.Open();
-                    NpgsqlCommand komut0 = new NpgsqlCommand("Select * from kitap where kitap_ad = '" + txtKitapAd.Text.ToUpper() + "'", baglanti);
+                    NpgsqlCommand komut0 = new NpgsqlCommand("SELECT * FROM kitap WHERE kitap_ad = '" + txtKitapAd.Text.ToUpper() + "'", baglanti);
                     NpgsqlDataReader dr = komut0.ExecuteReader();
 
 
@@ -144,7 +144,7 @@ namespace KütüphaneOtomasyon_0
                         kaydet.Parameters.AddWithValue("_tur", cbKitapTur.SelectedItem.ToString().ToUpper());
                         kaydet.Parameters.AddWithValue("_yayin_evi", txtYayınEvi.Text.ToUpper());
                         kaydet.Parameters.AddWithValue("_basim", txtBasim.Text.ToUpper());
-                        kaydet.Parameters.AddWithValue("_sayfa", txtSayfa.Text.ToUpper());
+                        kaydet.Parameters.AddWithValue("_sayfa", txtSayfa.Text);
                         kaydet.ExecuteNonQuery();
                         baglanti.Close();
 

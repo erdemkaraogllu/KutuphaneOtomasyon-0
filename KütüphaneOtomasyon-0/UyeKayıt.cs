@@ -61,7 +61,7 @@ namespace KütüphaneOtomasyon_0
 
                             Anasayfa form2 = new Anasayfa();
                             form2.Show();
-                            this.Hide();
+                            this.Close();
 
                             /*
                             create or replace function uye_insert(_tc character varying, _uye_ad character varying, _uye_soyad character varying,

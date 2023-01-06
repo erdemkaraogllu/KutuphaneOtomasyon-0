@@ -28,6 +28,7 @@ namespace KütüphaneOtomasyon_0
         private void MiniYoneticiUye_Load(object sender, EventArgs e)
         {
             dgvKitap.DataSource = yenileEmanet();
+           // dgvUye.DataSource = yenileUye();
             try
               {
                  string sorgu = "SELECT tc, uye_ad, uye_soyad, uye_telefon FROM uyebilgi";
@@ -139,12 +140,16 @@ namespace KütüphaneOtomasyon_0
                         komut.ExecuteNonQuery();
                         baglanti.Close();
 
+                        baglanti.Open();
+                        NpgsqlCommand komut0 = new NpgsqlCommand("DELETE FROM okunan_kitap WHERE tc = '" + dgvUye.SelectedRows[i].Cells[0].Value + "'", baglanti);
+                        komut0.ExecuteNonQuery();
+                        baglanti.Close();
+
                         MessageBox.Show("Üye Silindi !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgvUye.DataSource = yenileUye();
 
-                    }
-                    //MessageBox.Show("Silmek İstediğiniz Üyeyi Seçiniz !","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }                    
                 }
             }
             catch (Exception ex)
@@ -246,7 +251,19 @@ namespace KütüphaneOtomasyon_0
                     dgvKitap.DataSource = yenileEmanet();
 
                     /*
-                     
+                    create or replace function kitap_okundu(_tc character varying, _kitap_ad character varying)
+                    returns int as 
+                    $$
+                    begin
+	                    insert into okunan_kitap(tc,kitap_ad)
+	                    values(_tc,_kitap_ad);
+	                    if found then --Başarılı
+		                    return 1;
+	                    else return 0; --Hata
+	                    end if;
+                    end
+                    $$
+                    language plpgsql
                     */
 
                     baglanti.Open();

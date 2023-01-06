@@ -297,7 +297,7 @@
     <value>123, 291</value>
   </data>
   <data name="txtSifre.MaxLength" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>8</value>
   </data>
   <data name="txtSifre.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 30</value>

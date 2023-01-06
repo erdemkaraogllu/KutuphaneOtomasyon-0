@@ -36,11 +36,6 @@ namespace KütüphaneOtomasyon_0
             this.Hide();
         }
 
-        private void circularPictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void circularPictureBox2_Click_1(object sender, EventArgs e)
         {
             UyeGiris form2 = new UyeGiris();
@@ -59,26 +54,6 @@ namespace KütüphaneOtomasyon_0
         {
             circularPictureBox2.BackColor = Color.Transparent;
             circularPictureBox2.BorderStyle= BorderStyle.None;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void linkUyeOl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

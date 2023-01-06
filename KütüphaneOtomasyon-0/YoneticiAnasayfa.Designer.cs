@@ -60,6 +60,7 @@
             // circularPictureBox4
             // 
             this.circularPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox4.Image")));
             this.circularPictureBox4.Location = new System.Drawing.Point(6, 59);
             this.circularPictureBox4.Name = "circularPictureBox4";
@@ -74,6 +75,7 @@
             // circularPictureBox2
             // 
             this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox2.Image")));
             this.circularPictureBox2.Location = new System.Drawing.Point(6, 541);
             this.circularPictureBox2.Name = "circularPictureBox2";
@@ -88,6 +90,7 @@
             // circularPictureBox3
             // 
             this.circularPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox3.Image")));
             this.circularPictureBox3.Location = new System.Drawing.Point(6, 303);
             this.circularPictureBox3.Name = "circularPictureBox3";

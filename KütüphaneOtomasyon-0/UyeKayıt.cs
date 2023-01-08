@@ -30,60 +30,68 @@ namespace KütüphaneOtomasyon_0
                 }
                 else
                 {
-                    bool sorgu = false;
-                    baglanti.Open();
-                    NpgsqlCommand komut0 = new NpgsqlCommand("SELECT FROM uyebilgi WHERE tc = '" + txtTC.Text + "'", baglanti);
-                    NpgsqlDataReader dr = komut0.ExecuteReader();
-                    if (dr.Read())
+                    if (Dogrula(txtTC.Text) == false)
                     {
-                        sorgu = true;
-                        MessageBox.Show("Sistemde Zaten Kayıtlısınız !", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        baglanti.Close();
-                        dr.Close();
+                        MessageBox.Show("Lütfen Geçerli Bir TC Kimlik Numarası Giriniz !", "BİLGİLENDİRME", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    if (sorgu == false)
+                    else if (Dogrula(txtTC.Text) == true)
                     {
-                        if ( 6 <= txtSifre.TextLength && txtSifre.TextLength <=8)
+
+                        bool sorgu = false;
+                        baglanti.Open();
+                        NpgsqlCommand komut0 = new NpgsqlCommand("SELECT FROM uyebilgi WHERE tc = '" + txtTC.Text + "'", baglanti);
+                        NpgsqlDataReader dr = komut0.ExecuteReader();
+                        if (dr.Read())
                         {
+                            sorgu = true;
+                            MessageBox.Show("Sistemde Zaten Kayıtlısınız !", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             baglanti.Close();
-                            baglanti.Open();
-                            NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
-                            komut1.Parameters.AddWithValue("_tc", txtTC.Text);
-                            komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text.ToUpper());
-                            komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text.ToUpper());
-                            komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
-                            komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
-                            komut1.ExecuteNonQuery();
-                            baglanti.Close();
-
-                            MessageBox.Show("Kayıt Başarılı.");
-
-                            Anasayfa form2 = new Anasayfa();
-                            form2.Show();
-                            this.Close();
-
-                            /*
-                            create or replace function uye_insert(_tc character varying, _uye_ad character varying, _uye_soyad character varying,
-                                          _uye_telefon character varying, _uye_sifre character varying)
-                            returns int as 
-                            $$
-                            begin
-                                insert into uye_bilgi(tc, uye_ad, uye_soyad, uye_telefon, uye_sifre)
-                                values(_tc, _uye_ad, _uye_soyad, _uye_telefon, _uye_sifre);
-                                if found then --Başarılı
-                                    return 1;
-                                else return 0; --Hata
-                                end if;
-                            end
-                            $$
-                            language plpgsql
-                            */                            
+                            dr.Close();
                         }
-                        else
-                        {   
-                            baglanti.Close();
-                            MessageBox.Show("Lütfen En Az 6 En Fazla 8 Karakterli Bir Şifre Oluşturunuz !");
+
+                        if (sorgu == false)
+                        {
+                            if (6 <= txtSifre.TextLength && txtSifre.TextLength <= 8)
+                            {
+                                baglanti.Close();
+                                baglanti.Open();
+                                NpgsqlCommand komut1 = new NpgsqlCommand("Select from uye_insert(:_tc, :_uye_ad, :_uye_soyad, :_uye_telefon, :_uye_sifre)", baglanti);
+                                komut1.Parameters.AddWithValue("_tc", txtTC.Text);
+                                komut1.Parameters.AddWithValue("_uye_ad", txtAd.Text.ToUpper());
+                                komut1.Parameters.AddWithValue("_uye_soyad", txtSoyad.Text.ToUpper());
+                                komut1.Parameters.AddWithValue("_uye_telefon", txtTelefon.Text);
+                                komut1.Parameters.AddWithValue("_uye_sifre", txtSifre.Text);
+                                komut1.ExecuteNonQuery();
+                                baglanti.Close();
+
+                                MessageBox.Show("Kayıt Başarılı.");
+
+                                Anasayfa form2 = new Anasayfa();
+                                form2.Show();
+                                this.Hide();
+
+                                /*
+                                create or replace function uye_insert(_tc character varying, _uye_ad character varying, _uye_soyad character varying,
+                                              _uye_telefon character varying, _uye_sifre character varying)
+                                returns int as 
+                                $$
+                                begin
+                                    insert into uye_bilgi(tc, uye_ad, uye_soyad, uye_telefon, uye_sifre)
+                                    values(_tc, _uye_ad, _uye_soyad, _uye_telefon, _uye_sifre);
+                                    if found then --Başarılı
+                                        return 1;
+                                    else return 0; --Hata
+                                    end if;
+                                end
+                                $$
+                                language plpgsql
+                                */
+                            }
+                            else
+                            {
+                                baglanti.Close();
+                                MessageBox.Show("Lütfen En Az 6 En Fazla 8 Karakterli Bir Şifre Oluşturunuz !");
+                            }
                         }
                     }
                 }
@@ -129,6 +137,35 @@ namespace KütüphaneOtomasyon_0
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private bool Dogrula(string tcNo)
+        {
+            int[] tc = new int[11];
+            for (int i = 0; i < 11; i++)
+            {
+                tc.SetValue(Convert.ToInt16(tcNo.Substring(i, 1)), i);
+            }
+            int tek = (tc[0] + tc[2] + tc[4] + tc[6] + tc[8]) * 7;
+            int cift = tc[1] + tc[3] + tc[5] + tc[7];
+            int sonuc = tek - cift;
+            int onbir = (tc[0] + tc[2] + tc[4] + tc[6] + tc[8]) * 8;
+            string sonBasamak = onbir.ToString().Substring(onbir.ToString().Length - 1, 1);
+            if (tc[0] == 0)
+            {
+                return false;
+            }
+            else if (sonuc.ToString().Substring(sonuc.ToString().Length - 1, 1) != tc[9].ToString())
+            {
+                return false;
+            }
+            else if (sonBasamak != tc[10].ToString())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -152,7 +152,7 @@
             this.txtTelefon.Cursor = System.Windows.Forms.Cursors.SizeNS;
             this.txtTelefon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTelefon.Location = new System.Drawing.Point(106, 233);
-            this.txtTelefon.Mask = "(999) 000-0000";
+            this.txtTelefon.Mask = "(599) 000-0000";
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(171, 27);
             this.txtTelefon.TabIndex = 3;

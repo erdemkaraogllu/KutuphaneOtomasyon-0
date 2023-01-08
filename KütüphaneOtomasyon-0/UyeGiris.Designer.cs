@@ -99,7 +99,7 @@
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(142, 129);
-            this.txtPassword.MaxLength = 11;
+            this.txtPassword.MaxLength = 8;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(161, 27);
             this.txtPassword.TabIndex = 1;

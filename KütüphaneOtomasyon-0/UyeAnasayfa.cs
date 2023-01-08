@@ -60,7 +60,7 @@ namespace KütüphaneOtomasyon_0
             try
             {
                 txtAra.Clear();
-                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap";
+                string sorgu = "SELECT kitap_ad, yazar, tur, yayin_evi, basim, sayfa FROM kitap ORDER BY kitap_ad";
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(sorgu , baglanti);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -172,7 +172,7 @@ namespace KütüphaneOtomasyon_0
         {
             string deger1 = UyeGiris.deger;
             baglanti.Open();
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, AGE(teslim_date,current_date) FROM emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("SELECT kitap_ad, extract(day FROM age(teslim_date,current_date)) FROM emanet_kitap WHERE tc like '" + deger1 + "%'", baglanti);
             DataTable tablo1 = new DataTable();
             da.Fill(tablo1);
             baglanti.Close();
